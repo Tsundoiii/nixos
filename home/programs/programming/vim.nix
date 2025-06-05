@@ -3,6 +3,6 @@
 {
   programs.vim = {
     defaultEditor = true;
-    relativenumber = true;
+    settings.relativenumber = true;
   };
 }

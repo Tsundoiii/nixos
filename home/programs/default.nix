@@ -1,6 +1,6 @@
 {
   imports = [
+    ./programming
     ./firefox.nix
-    ./git.nix
   ];
 }

@@ -4,6 +4,7 @@
   home = {
     username = "tsundoiii";
     homeDirectory = "/home/tsundoiii";
+
     packages = with pkgs; [
       vscode
       discord

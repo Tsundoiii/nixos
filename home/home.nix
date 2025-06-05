@@ -9,6 +9,7 @@
       vscode
       discord
       hyfetch
+      prismlauncher
     ];
   };
 

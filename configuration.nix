@@ -78,6 +78,7 @@
 
   programs.git.enable = true;
   programs.vim.enable = true;
+  programs.steam.enable = true;
 
   users.users.tsundoiii = {
     isNormalUser = true;

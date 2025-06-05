@@ -4,8 +4,8 @@
   programs.vscode = {
     enable = true;
     
-    extensions = with pkgs.vscode-extensions; [
-      bbnoist.nix
-    ]
+    profiles.default.extensions = with pkgs.vscode-extensions; [
+      bbenoist.nix
+    ];
   };
 }

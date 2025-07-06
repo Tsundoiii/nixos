@@ -7,6 +7,7 @@
     profiles.default = {
       userSettings = {
         "git.autofetch" = true;
+        "git.confirmSync" = false;
         "editor.formatOnSave" = true;
         "editor.formatOnPaste" = true;
         "editor.formatOnType" = true;

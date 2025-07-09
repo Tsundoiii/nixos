@@ -53,8 +53,11 @@
   services = {
     xserver = {
       enable = true;
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
+
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
+      };
 
       xkb = {
         layout = "us";
@@ -76,9 +79,16 @@
 
   security.rtkit.enable = true;
 
-  programs.git.enable = true;
-  programs.vim.enable = true;
-  programs.steam.enable = true;
+  programs = {
+    git.enable = true;
+    vim.enable = true;
+    steam.enable = true;
+    hyprland.enable = true;
+  };
+
+  environment.systemPackages = [
+    pkgs.kitty
+  ];
 
   users.users.tsundoiii = {
     isNormalUser = true;

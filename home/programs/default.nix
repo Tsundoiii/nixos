@@ -1,7 +1,7 @@
 {
   imports = [
+    ./display
     ./programming
     ./firefox.nix
-    ./hyprland.nix
   ];
 }

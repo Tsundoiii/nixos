@@ -65,6 +65,8 @@
       };
     };
 
+    hypridle.enable = true;
+    
     pulseaudio.enable = false;
 
     pipewire = {

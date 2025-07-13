@@ -77,13 +77,22 @@
 
   networking.networkmanager.enable = true;
 
-  security.rtkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    pam.services.hyprlock = {};
+  };
 
   programs = {
     git.enable = true;
     vim.enable = true;
     steam.enable = true;
-    hyprland.enable = true;
+
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+    };
+    
+    hyprlock.enable = true;
   };
 
   environment.systemPackages = [

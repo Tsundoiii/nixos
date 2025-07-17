@@ -8,6 +8,7 @@
     homeDirectory = "/home/tsundoiii";
 
     packages = with pkgs; [
+      nautilus
       vscode
       discord
       hyfetch

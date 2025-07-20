@@ -18,6 +18,7 @@
 
       extensions = with pkgs.vscode-extensions; [
         bbenoist.nix
+        mkhl.direnv
       ];
     };
   };

@@ -1,7 +1,7 @@
 {
   imports = [
     ./display
+    ./misc
     ./programming
-    ./firefox.nix
   ];
 }

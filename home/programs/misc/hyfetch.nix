@@ -16,7 +16,7 @@
             "2" = 0;
         };
         
-        fore_back = []
+        fore_back = [];
       };
 
       backend = "neofetch";

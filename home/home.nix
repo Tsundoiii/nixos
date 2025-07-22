@@ -1,9 +1,11 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.home-manager.enable = true;
   
   home = {
+    stateVersion = "25.05";
+
     username = "tsundoiii";
     homeDirectory = "/home/tsundoiii";
 
@@ -19,6 +21,4 @@
   imports = [
     ./programs
   ];
-
-  home.stateVersion = "25.05";
 }

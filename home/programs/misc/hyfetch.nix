@@ -15,8 +15,6 @@
             "1" = 3;
             "2" = 0;
         };
-        
-        fore_back = [];
       };
 
       backend = "neofetch";

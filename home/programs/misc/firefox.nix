@@ -44,6 +44,14 @@ in
 
       profiles = {
         default = {
+          containersForce = true;
+          containers = {
+            Google = {
+              color = "red";
+              icon = "circle";
+            };
+          };
+
           inherit search;
 
           settings = settings // {

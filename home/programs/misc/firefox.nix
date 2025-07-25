@@ -17,11 +17,6 @@ let
     "extensions.autoDisableScopes" = 0;
 
     "layout.css.prefers-color-scheme.content-override" = 0;
-
-    "privacy.sanitize.sanitizeOnShutdown" = true;
-    "privacy.trackingprotection.emailtracking.enabled" = true;
-    "privacy.trackingprotection.enabled" = true;
-    "privacy.trackingprotection.socialtracking.enabled" = true;
   };
 in
 {
@@ -29,10 +24,26 @@ in
       enable = true;
       languagePacks = [ "en-US" ];
 
+      policies = {
+        EnableTrackingProtection = {
+          Value = true;
+          Cryptomining = true;
+          Fingerprinting = true;
+          EmailTracking = true;
+        };
+
+        ExtensionSettings = {
+          "uBlock0@raymondhill.net" = {
+            installation_mode = "force_installed";
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+          };
+        };
+
+        HttpsOnlyMode = "force_enabled";
+      };
+
       profiles = {
         default = {
-          isDefault = true;
-
           inherit search;
 
           settings = settings // {
@@ -57,9 +68,8 @@ in
 
           inherit search;
 
-          extensions = {};
-
           settings = settings // {
+            "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
             "browser.newtabpage.pinned" = [
               {
                 title = "myPurdue";

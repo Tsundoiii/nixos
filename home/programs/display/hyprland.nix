@@ -9,6 +9,7 @@
       exec-once = [ "firefox" "discord" ];
     
       bind = [
+        ", Print, exec, grimblast copy area"
         "$mod, C, killactive,"
         "$mod, Q, exec, $terminal"
         "$mod, F, exec, firefox"

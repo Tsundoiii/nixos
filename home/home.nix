@@ -15,6 +15,7 @@
       discord
       hyfetch
       prismlauncher
+      grimblast
     ];
   };
 

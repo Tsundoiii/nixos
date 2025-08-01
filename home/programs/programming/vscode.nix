@@ -13,6 +13,7 @@
         "editor.formatOnType" = true;
         "editor.bracketPairColorization.independentColorPoolPerBracketType" = true;
         "files.autoSave" = "onFocusChange";
+        "explorer.confirmDragAndDrop" = false;
         "telemetry.telemetryLevel" = "error";
       };
 

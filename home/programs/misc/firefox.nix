@@ -14,6 +14,8 @@ let
     "browser.theme.toolbar-theme" = 0;
     "browser.urlbar.suggest.history" = false;
 
+    "devtools.toolbox.host" = "right";
+
     "extensions.autoDisableScopes" = 0;
 
     "layout.css.prefers-color-scheme.content-override" = 0;

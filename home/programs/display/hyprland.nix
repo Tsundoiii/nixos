@@ -3,13 +3,21 @@
     enable = true;
 
     settings = {
+      "monitor" = ",highres,auto,auto";
       "$mod" = "SUPER";
       "$terminal" = "kitty";
 
       exec-once = [ "firefox" "discord" ];
     
       bind = [
+        ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
+        ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+        ", XF86AudioRaiseVolume, exec, pamixer -i 5"
+        ", XF86AudioLowerVolume, exec, pamixer -d 5"
+        ", XF86AudioMute, exec, pamixer -t"
+        ", XF86AudioMicMute, exec, pamixer --default-source -m"
         ", Print, exec, grimblast copy area"
+        
         "$mod, C, killactive,"
         "$mod, Q, exec, $terminal"
         "$mod, F, exec, firefox"

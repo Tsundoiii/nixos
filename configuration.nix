@@ -85,20 +85,22 @@
   };
 
   programs = {
-    git.enable = true;
-    vim.enable = true;
-    steam.enable = true;
-
     hyprland = {
       enable = true;
       withUWSM = true;
     };
     
     hyprlock.enable = true;
+
+    git.enable = true;
+    vim.enable = true;
+    steam.enable = true;
   };
 
-  environment.systemPackages = [
-    pkgs.kitty
+  environment.systemPackages = with pkgs; [
+    pamixer
+    brightnessctl
+    kitty
   ];
 
   users.users.tsundoiii = {

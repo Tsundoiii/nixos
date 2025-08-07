@@ -3,11 +3,15 @@
     enable = true;
 
     settings = {
-      "monitor" = ",highres,auto,auto";
+      "monitor" = ",highres,auto,1";
       "$mod" = "SUPER";
       "$terminal" = "kitty";
 
       exec-once = [ "firefox" "discord" ];
+
+      xwayland = {
+        force_zero_scaling = true;
+      };
     
       bind = [
         ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
@@ -17,7 +21,7 @@
         ", XF86AudioMute, exec, pamixer -t"
         ", XF86AudioMicMute, exec, pamixer --default-source -m"
         ", Print, exec, grimblast copy area"
-        
+
         "$mod, C, killactive,"
         "$mod, Q, exec, $terminal"
         "$mod, F, exec, firefox"

@@ -7,10 +7,7 @@
 
   networking.hostName = "desktop";
 
-  services.printing = {
-    enable = true;
-    drivers = [ pkgs.hplipWithPlugin ];
-  };
+  services.printing.drivers = [ pkgs.hplipWithPlugin ];
 
   hardware = {
     printers = {

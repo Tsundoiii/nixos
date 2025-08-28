@@ -16,6 +16,7 @@
       hyfetch
       prismlauncher
       grimblast
+      texlive.combined.scheme-basic
     ];
   };
 

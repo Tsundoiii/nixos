@@ -75,6 +75,8 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+
+    printing.enable = true;
   };
 
   networking.networkmanager.enable = true;

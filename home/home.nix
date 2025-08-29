@@ -17,6 +17,7 @@
       prismlauncher
       grimblast
       texlive.combined.scheme-basic
+      spyder
     ];
   };
 

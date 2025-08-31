@@ -95,6 +95,11 @@ in
                 title = "Outlook";
                 url = "https://outlook.office365.com";
               }
+
+              {
+                title = "Word";
+                url = "https://word.microsoft.cloud";
+              }
             ];
 
             "sidebar.verticalTabs" = true;

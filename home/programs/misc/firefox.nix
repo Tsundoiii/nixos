@@ -92,8 +92,18 @@ in
               }
 
               {
+                title = "Gradescope";
+                url = "https://www.gradescope.com";
+              }
+
+              {
                 title = "Outlook";
                 url = "https://outlook.office365.com";
+              }
+
+              {
+                title = "OneDrive";
+                url = "https://onedrive.live.com";
               }
 
               {

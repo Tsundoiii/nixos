@@ -15,6 +15,8 @@
         "files.autoSave" = "onFocusChange";
         "explorer.confirmDragAndDrop" = false;
         "telemetry.telemetryLevel" = "error";
+
+        "latex-workshop.formatting.latex" = "latexindent";
       };
 
       extensions = with pkgs.vscode-extensions; [

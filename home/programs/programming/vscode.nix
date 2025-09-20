@@ -19,6 +19,7 @@
         "explorer.confirmDragAndDrop" = false;
         "telemetry.telemetryLevel" = "error";
 
+        "python.analysis.typeCheckingMode" = "strict";
         "latex-workshop.formatting.latex" = "latexindent";
       };
 

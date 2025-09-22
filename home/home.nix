@@ -11,13 +11,17 @@
 
     packages = with pkgs; [
       nautilus
-      vscode
-      discord
+      kdePackages.filelight
+
       hyfetch
-      prismlauncher
-      grimblast
-      texlive.combined.scheme-full
+      discord
+
+      vscode
       kicad
+
+      texlive.combined.scheme-full
+
+      prismlauncher
     ];
   };
 

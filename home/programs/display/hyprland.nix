@@ -26,8 +26,7 @@
         "$mod, Q, exec, $terminal"
         "$mod, F, exec, firefox"
         "$mod, P, exec, firefox -P school"
-        "$mod, D, exec, discord"
-        "$mod, V, exec, code"
+        "$mod, R, exec, rofi -show drun"
       ] ++ (
         builtins.concatLists (builtins.genList (i: 
           let workspace = i + 1;

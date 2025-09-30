@@ -97,6 +97,11 @@ in
               }
 
               {
+                title = "MyLab & Mastering";
+                url = "https://mylab.pearson.com";
+              }
+
+              {
                 title = "Outlook";
                 url = "https://outlook.office365.com";
               }

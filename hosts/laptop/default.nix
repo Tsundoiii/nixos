@@ -6,11 +6,6 @@
   networking.hostName = "laptop";
 
   hardware = {
-    bluetooth = {
-      enable = true;
-      powerOnBoot = true;
-    };
-
     printers = {
       ensurePrinters = [
         {

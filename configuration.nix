@@ -32,6 +32,11 @@
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
   time.timeZone = "America/Indiana/Indianapolis";
 
   i18n = {
@@ -77,6 +82,7 @@
     };
 
     printing.enable = true;
+    blueman.enable = true;
   };
 
   networking.networkmanager.enable = true;

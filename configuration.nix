@@ -97,11 +97,15 @@
       enable = true;
       withUWSM = true;
     };
+
+    vim = {
+      enable = true;
+      defaultEditor = true;
+    };
     
     hyprlock.enable = true;
 
     git.enable = true;
-    vim.enable = true;
     steam.enable = true;
   };
 

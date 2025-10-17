@@ -108,7 +108,6 @@
   environment.systemPackages = with pkgs; [
     pamixer
     brightnessctl
-    kitty
   ];
 
   users.users.tsundoiii = {

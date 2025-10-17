@@ -5,7 +5,7 @@
     settings = {
       "monitor" = ",highres,auto,1";
       "$mod" = "SUPER";
-      "$terminal" = "kitty";
+      "$terminal" = "alacritty";
 
       exec-once = [ "firefox" "discord" ];
 

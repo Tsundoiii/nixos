@@ -6,6 +6,8 @@
     
     profiles.default = {
       userSettings = {
+        "workbench.colorTheme" = "Default High Contrast";
+
         "git.autofetch" = true;
         "git.confirmSync" = false;
         "git.openRepositoryInParentFolders" = "always";
@@ -24,8 +26,9 @@
       };
 
       extensions = with pkgs.vscode-extensions; [
-        bbenoist.nix
+        ms-vscode-remote.remote-ssh
         mkhl.direnv
+        bbenoist.nix
       ];
     };
   };

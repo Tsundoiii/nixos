@@ -115,6 +115,11 @@ in
                 title = "Word";
                 url = "https://word.microsoft.cloud";
               }
+
+              {
+                title = "Wikipedia";
+                url = "https://en.wikipedia.org";
+              }
             ];
 
             "sidebar.verticalTabs" = true;

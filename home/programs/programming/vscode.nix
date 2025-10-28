@@ -7,6 +7,7 @@
     profiles.default = {
       userSettings = {
         "workbench.colorTheme" = "Default High Contrast";
+        "workbench.secondarySideBar.defaultVisibility" = "hidden";
 
         "git.autofetch" = true;
         "git.confirmSync" = false;

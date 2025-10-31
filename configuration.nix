@@ -81,6 +81,7 @@
       pulse.enable = true;
     };
 
+    usbmuxd.enable = true;
     printing.enable = true;
     blueman.enable = true;
   };
@@ -112,6 +113,8 @@
   environment.systemPackages = with pkgs; [
     pamixer
     brightnessctl
+    libimobiledevice
+    ifuse
   ];
 
   users.users.tsundoiii = {
@@ -120,9 +123,12 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  fonts.enableDefaultPackages = true;
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-  ];
+  fonts = {
+    enableDefaultPackages = true;
+
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk-sans
+    ];
+  };
 }

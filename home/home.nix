@@ -12,6 +12,8 @@
     packages = with pkgs; [
       nautilus
       kdePackages.filelight
+      mpv
+      qimgv
 
       hyfetch
       discord

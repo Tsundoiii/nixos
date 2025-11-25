@@ -2,7 +2,7 @@
 
 {
   programs.home-manager.enable = true;
-  
+
   home = {
     stateVersion = "25.05";
 
@@ -10,18 +10,21 @@
     homeDirectory = "/home/tsundoiii";
 
     packages = with pkgs; [
-      nautilus
+      kdePackages.dolphin
       kdePackages.filelight
       mpv
       qimgv
+      grimblast
 
       hyfetch
       discord
 
       vscode
-      kicad
+      nixd
+      nixfmt-rfc-style
+      #kicad
 
-      texlive.combined.scheme-full
+      #texlive.combined.scheme-medium
 
       prismlauncher
     ];

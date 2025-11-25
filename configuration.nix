@@ -2,13 +2,16 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   system.stateVersion = "25.05";
 
   nix = {
-    settings.experimental-features = [ "nix-command" "flakes" ];
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
 
     gc = {
       automatic = true;
@@ -41,7 +44,7 @@
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
-    
+
     extraLocaleSettings = {
       LC_ADDRESS = "en_US.UTF-8";
       LC_IDENTIFICATION = "en_US.UTF-8";
@@ -56,13 +59,13 @@
   };
 
   services = {
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
+
     xserver = {
       enable = true;
-
-      displayManager.gdm = {
-        enable = true;
-        wayland = true;
-      };
 
       xkb = {
         layout = "us";
@@ -70,10 +73,7 @@
       };
     };
 
-    hypridle.enable = true;
-    
     pulseaudio.enable = false;
-
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -81,6 +81,7 @@
       pulse.enable = true;
     };
 
+    upower.enable = true;
     usbmuxd.enable = true;
     printing.enable = true;
     blueman.enable = true;
@@ -90,7 +91,7 @@
 
   security = {
     rtkit.enable = true;
-    pam.services.hyprlock = {};
+    pam.services.hyprlock = { };
   };
 
   programs = {
@@ -103,7 +104,7 @@
       enable = true;
       defaultEditor = true;
     };
-    
+
     hyprlock.enable = true;
 
     git.enable = true;
@@ -120,7 +121,10 @@
   users.users.tsundoiii = {
     isNormalUser = true;
     description = "Tsundoiii";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   fonts = {
@@ -130,5 +134,19 @@
       noto-fonts
       noto-fonts-cjk-sans
     ];
+  };
+
+  stylix = {
+    enable = true;
+
+    polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
+
+    fonts = {
+      monospace = {
+        package = pkgs.nerd-fonts.dejavu-sans-mono;
+        name = "DejaVuSansM Nerd Font Mono";
+      };
+    };
   };
 }

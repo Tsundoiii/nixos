@@ -14,9 +14,10 @@
           deviceUri = "lpd://chen5708@wpvapppcprt02.itap.purdue.edu:515/itap-printing";
           model = "drv:///sample.drv/generic.ppd";
         }
+
         {
           name = "itap-colorprinting";
-          description = "Purdue Black and White Printing";
+          description = "Purdue Color Printing";
           deviceUri = "lpd://chen5708@wpvapppcprt02.itap.purdue.edu:515/itap-colorprinting";
           model = "drv:///sample.drv/generic.ppd";
         }

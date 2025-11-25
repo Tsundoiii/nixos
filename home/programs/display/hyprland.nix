@@ -5,14 +5,16 @@
     settings = {
       "monitor" = ",highres,auto,1";
       "$mod" = "SUPER";
-      "$terminal" = "alacritty";
 
-      exec-once = [ "firefox" "discord" ];
+      exec-once = [
+        "firefox"
+        "discord"
+      ];
 
       xwayland = {
         force_zero_scaling = true;
       };
-    
+
       bind = [
         ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
         ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
@@ -23,20 +25,42 @@
         ", Print, exec, grimblast copy area"
 
         "$mod, C, killactive,"
-        "$mod, Q, exec, $terminal"
+        "$mod, Q, exec, alacritty"
         "$mod, F, exec, firefox"
         "$mod, P, exec, firefox -P school"
         "$mod, R, exec, rofi -show drun"
-      ] ++ (
-        builtins.concatLists (builtins.genList (i: 
-          let workspace = i + 1;
-          in [
+
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, down, movefocus, d"
+      ]
+      ++ (builtins.concatLists (
+        builtins.genList (
+          i:
+          let
+            workspace = i + 1;
+          in
+          [
             "$mod, ${toString workspace}, workspace, ${toString workspace}"
             "$mod SHIFT, ${toString workspace}, movetoworkspace, ${toString workspace}"
           ]
-        )
-        9)
-      );
+        ) 9
+      ));
+
+      decoration = {
+        rounding = 10;
+        rounding_power = 2;
+
+        active_opacity = 1.0;
+        inactive_opacity = 0.75;
+      };
+
+      windowrule = [
+        "workspace 2, class:discord"
+      ];
+
+      gesture = "3, horizontal, workspace";
     };
   };
 }

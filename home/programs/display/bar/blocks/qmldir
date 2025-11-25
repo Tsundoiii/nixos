@@ -1,0 +1,6 @@
+Audio Audio.qml
+Bluetooth Bluetooth.qml
+Network Network.qml
+Power Power.qml
+Time Time.qml
+Workspaces Workspaces.qml

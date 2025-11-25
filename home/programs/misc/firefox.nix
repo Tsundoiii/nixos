@@ -10,15 +10,11 @@ let
     "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
     "browser.newtabpage.activity-stream.weather.temperatureUnits" = "c";
     "browser.privatebrowsing.autostart" = true;
-    "browser.theme.content-theme" = 0;
-    "browser.theme.toolbar-theme" = 0;
     "browser.urlbar.suggest.history" = false;
 
     "devtools.toolbox.host" = "right";
 
     "extensions.autoDisableScopes" = 0;
-
-    "layout.css.prefers-color-scheme.content-override" = 0;
   };
 in
 {
@@ -61,6 +57,11 @@ in
               {
                 title = "YouTube";
                 url = "https://www.youtube.com";
+              }
+
+              {
+                title = "Spotify";
+                url = "https://open.spotify.com";
               }
 
               {
@@ -127,4 +128,6 @@ in
         };
       };
   };
+
+  stylix.targets.firefox.profileNames = [ "default" "school" ];
 }

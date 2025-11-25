@@ -1,42 +1,52 @@
 {
-  description = "NixOS flake for configuring deasktop and laptop.";
+  description = "NixOS flake for configuring desktop and laptop.";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "nixpkgs";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    stylix = {
+      url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
-    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      stylix,
+      ...
+    }:
+    let
       system = "x86_64-linux";
+
       modules = [
         ./configuration.nix
-        ./hosts/desktop
 
-        home-manager.nixosModules.home-manager {
+        home-manager.nixosModules.home-manager
+        {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.tsundoiii = import ./home/home.nix;
         }
-      ];
-    };
 
-    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./configuration.nix
-        ./hosts/laptop
-
-        home-manager.nixosModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.tsundoiii = import ./home/home.nix;
-        }
+        stylix.nixosModules.stylix
       ];
+    in
+    {
+      nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = modules ++ [ ./hosts/desktop ];
+      };
+
+      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = modules ++ [ ./hosts/laptop ];
+      };
     };
-  };
 }

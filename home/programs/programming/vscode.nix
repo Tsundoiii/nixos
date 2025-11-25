@@ -3,10 +3,9 @@
 {
   programs.vscode = {
     enable = true;
-    
+
     profiles.default = {
       userSettings = {
-        "workbench.colorTheme" = "Default High Contrast";
         "workbench.secondarySideBar.defaultVisibility" = "hidden";
 
         "git.autofetch" = true;
@@ -22,6 +21,16 @@
         "explorer.confirmDragAndDrop" = false;
         "telemetry.telemetryLevel" = "error";
 
+        "nix.enableLanguageServer" = true;
+        "nix.serverPath" = "nixd";
+        "nix.serverSettings" = {
+          "nixd" = {
+            "formatting" = {
+              "command" = [ "nixfmt" ];
+            };
+          };
+        };
+
         "python.analysis.typeCheckingMode" = "strict";
         "latex-workshop.formatting.latex" = "latexindent";
       };
@@ -29,7 +38,7 @@
       extensions = with pkgs.vscode-extensions; [
         ms-vscode-remote.remote-ssh
         mkhl.direnv
-        bbenoist.nix
+        jnoortheen.nix-ide
       ];
     };
   };

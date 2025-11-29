@@ -9,10 +9,16 @@ Scope {
     id: palette
   }
 
+  SystemClock {
+    id: clock
+    precision: SystemClock.Minutes
+  }
+
   Variants {
     model: Quickshell.screens
 
     PanelWindow {
+      id: bar
       required property var modelData
       screen: modelData
 
@@ -30,31 +36,25 @@ Scope {
         anchors.fill: parent
 
         Workspaces {
-          palette: palette
           Layout.alignment: Qt.AlignLeft
+          Layout.margins: (bar.height - height) / 2
         }
 
         Time {
-          palette: palette
-          Layout.alignment: Qt.AlignHCenter
+          anchors.centerIn: parent
+          Layout.margins: (bar.height - height) / 2
         }
 
         RowLayout {
           id: right
-          spacing: 20
           Layout.alignment: Qt.AlignRight
+          Layout.margins: (bar.height - height) / 2
           
-          Bluetooth {
-            palette: palette
-          }
+          Bluetooth {}
 
-          Audio {
-            palette: palette
-          }
+          Audio {}
 
-          Power {
-            palette: palette
-          }
+          Power {}
         }
       }
     }

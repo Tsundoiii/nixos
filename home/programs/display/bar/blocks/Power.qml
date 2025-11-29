@@ -3,7 +3,7 @@ import QtQuick
 import "utils"
 
 BarBlock {
-    color: UPower.onBattery ? "transparent" : "#83c092"
+    color: UPower.onBattery ? "transparent" : palette.button
     
     BarText {
         property var batterySymbols: {
@@ -25,7 +25,6 @@ BarBlock {
             return UPower.displayDevice.isLaptopBattery ? `${batterySymbols[parseInt(percent / 10) * 10]} ${percent}% ` : ""
         }
 
-        palette: palette
         text: `${batteryPercent(percent)}⏻`
     }
 }

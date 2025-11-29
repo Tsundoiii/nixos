@@ -5,19 +5,29 @@ import QtQuick.Layouts
 import "utils"
 
 RowLayout {
-    required property SystemPalette palette
     property HyprlandMonitor monitor: Hyprland.monitorFor(screen)
     
-    spacing: 20
+    spacing: 0
 
     Repeater {
         model: Hyprland.workspaces
 
         BarBlock {
-            palette: palette
+            required property HyprlandWorkspace modelData
+            color: modelData.focused ? palette.highlight : "transparent"
+            implicitWidth: implicitHeight
             
             BarText {
-                text: index + 1
+                text: modelData.id
+                font.bold: modelData.focused
+                color: modelData.focused ? palette.highlightedText : palette.windowText
+                horizontalAlignment: Text.AlignHCenter
+
+                MouseArea {
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    onClicked: modelData.activate()
+                }
             }
         }
     }

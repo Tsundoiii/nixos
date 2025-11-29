@@ -25,7 +25,6 @@ BarBlock {
             return `󰂯 ${device.name} ${batterySymbols[parseInt(batteryPercent / 10) * 10]} ${batteryPercent}%`
         }
 
-        palette: palette
         text: deviceInfo(Bluetooth.devices.values[0])
     }
 }

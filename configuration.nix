@@ -5,7 +5,17 @@
 { pkgs, ... }:
 
 {
-  system.stateVersion = "25.05";
+  system = {
+    stateVersion = "25.05";
+
+    autoUpgrade = {
+      enable = true;
+      flake = toString ./.;
+      dates = "weekly";
+      persistent = true;
+      runGarbageCollection = true;
+    };
+  };
 
   nix = {
     settings.experimental-features = [
@@ -14,7 +24,6 @@
     ];
 
     gc = {
-      automatic = true;
       dates = "weekly";
       options = "--delete-older-than 14d";
     };

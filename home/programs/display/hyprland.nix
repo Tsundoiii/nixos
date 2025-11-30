@@ -24,8 +24,9 @@
         ", Print, exec, grimblast copy area"
 
         "$mod, C, killactive,"
+        "$mod, F, fullscreen"
         "$mod, Q, exec, alacritty"
-        "$mod, F, exec, firefox"
+        "$mod, B, exec, firefox"
         "$mod, P, exec, firefox -P school"
         "$mod, R, exec, rofi -show drun"
 

@@ -17,17 +17,10 @@
     };
   };
 
-  nix = {
-    settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-
-    gc = {
-      dates = "weekly";
-      options = "--delete-older-than 14d";
-    };
-  };
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   nixpkgs.config.allowUnfree = true;
 

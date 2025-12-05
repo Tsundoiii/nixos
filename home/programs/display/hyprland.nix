@@ -8,6 +8,7 @@
 
       exec-once = [
         "firefox"
+        "ibus start --type wayland"
       ];
 
       xwayland = {

@@ -10,10 +10,15 @@
 
     autoUpgrade = {
       enable = true;
-      flake = toString ./.;
       dates = "weekly";
       persistent = true;
       runGarbageCollection = true;
+
+      flags = [
+        "--upgrade-input"
+        "nixpkgs"
+        "--commit-lock-file"
+      ];
     };
   };
 

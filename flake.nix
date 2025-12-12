@@ -23,8 +23,6 @@
       ...
     }:
     let
-      system = "x86_64-linux";
-
       modules = [
         ./configuration.nix
 
@@ -40,12 +38,10 @@
     in
     {
       nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
-        inherit system;
         modules = modules ++ [ ./hosts/desktop ];
       };
 
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-        inherit system;
         modules = modules ++ [ ./hosts/laptop ];
       };
     };

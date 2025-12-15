@@ -15,7 +15,7 @@
       runGarbageCollection = true;
 
       flags = [
-        "--upgrade-input"
+        "--update-input"
         "nixpkgs"
         "--commit-lock-file"
       ];

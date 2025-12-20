@@ -1,6 +1,8 @@
 Audio Audio.qml
 Bluetooth Bluetooth.qml
+Hardware Hardware.qml
 Network Network.qml
 Power Power.qml
 Time Time.qml
+Tray Tray.qml
 Workspaces Workspaces.qml

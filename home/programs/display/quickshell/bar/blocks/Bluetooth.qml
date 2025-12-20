@@ -4,6 +4,7 @@ import "utils"
 
 BarBlock {
     visible: Bluetooth.devices.values.some(device => device.connected)
+    color: theme.blue
 
     BarText {
         property var batterySymbols: {

@@ -14,16 +14,19 @@ RowLayout {
 
         BarBlock {
             required property HyprlandWorkspace modelData
-            color: modelData.focused ? palette.highlight : "transparent"
+            color: modelData.focused || mouseArea.containsMouse ? theme.blue : "transparent"
             implicitWidth: implicitHeight
+            margin: 2
             
             BarText {
+                palette: palette
                 text: modelData.id
                 font.bold: modelData.focused
-                color: modelData.focused ? palette.highlightedText : palette.windowText
+                color: modelData.focused || mouseArea.containsMouse ? theme.bg0 : theme.fg
                 horizontalAlignment: Text.AlignHCenter
 
                 MouseArea {
+                    id: mouseArea
                     anchors.fill: parent
                     hoverEnabled: true
                     onClicked: modelData.activate()

@@ -3,5 +3,6 @@ import QtQuick
 
 WrapperRectangle {
     radius: 5
-    width: content.width
+    margin: 5
+    color: "transparent"
 }

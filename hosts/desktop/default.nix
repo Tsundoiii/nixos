@@ -17,6 +17,7 @@
           deviceUri = "usb://HP/LaserJet%20Professional%20M1212nf%20MFP?serial=000000000QJ46WG1PR1a";
         }
       ];
+
       ensureDefaultPrinter = "Printer";
     };
 

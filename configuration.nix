@@ -121,6 +121,7 @@
       pulse.enable = true;
     };
 
+    fwupd.enable = true;
     upower.enable = true;
     usbmuxd.enable = true;
     printing.enable = true;

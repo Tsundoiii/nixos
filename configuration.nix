@@ -42,6 +42,26 @@
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
+  fileSystems = {
+    "/".options = [ "compress=zstd" ];
+
+    "/home".options = [ "compress=zstd" ];
+
+    "/nix".options = [
+      "compress=zstd"
+      "noatime"
+    ];
+
+    "/swap".options = [ "noatime" ];
+  };
+
+  swapDevices = [
+    {
+      device = "/swap/swapfile";
+      size = 8 * 1024;
+    }
+  ];
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -75,6 +95,11 @@
   };
 
   services = {
+    btrfs.autoScrub = {
+      enable = true;
+      fileSystems = [ "/" ];
+    };
+
     displayManager.gdm = {
       enable = true;
       wayland = true;

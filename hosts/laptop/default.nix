@@ -1,36 +1,6 @@
 {
   imports = [ ./hardware-configuration.nix ];
 
-  fileSystems = {
-    "/".options = [ "compress=zstd" ];
-
-    "/home" = {
-      device = "/dev/disk/by-uuid/64895545-52b1-4cfe-a0ae-b1b7f6668db5";
-
-      options = [
-        "subvol=home"
-        "compress=zstd"
-      ];
-    };
-
-    "/nix" = {
-      device = "/dev/disk/by-uuid/64895545-52b1-4cfe-a0ae-b1b7f6668db5";
-
-      options = [
-        "subvol=nix"
-        "compress=zstd"
-        "noatime"
-      ];
-    };
-
-    "/swap".options = [ "noatime" ];
-  };
-
-  services.btrfs.autoScrub = {
-    enable = true;
-    fileSystems = [ "/" ];
-  };
-
   networking.hostName = "laptop";
 
   services.fprintd.enable = true;

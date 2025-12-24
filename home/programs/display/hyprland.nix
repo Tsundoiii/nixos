@@ -19,6 +19,11 @@ let
       }
 
       {
+        name = "Reboot";
+        command = "reboot";
+      }
+
+      {
         name = "Suspend";
         command = "systemctl suspend";
       }

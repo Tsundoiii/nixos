@@ -16,10 +16,8 @@
       qimgv
       grimblast
 
-      hyfetch
       discord
 
-      vscode
       nixd
       nixfmt-rfc-style
       #kicad

@@ -152,12 +152,16 @@
     steam.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    pamixer
-    brightnessctl
-    libimobiledevice
-    ifuse
-  ];
+  environment = {
+    sessionVariables.XDG_SCREENSHOTS_DIR = "$HOME/Pictures/Screenshots";
+
+    systemPackages = with pkgs; [
+      pamixer
+      brightnessctl
+      libimobiledevice
+      ifuse
+    ];
+  };
 
   users.users.tsundoiii = {
     isNormalUser = true;

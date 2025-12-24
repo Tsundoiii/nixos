@@ -1,7 +1,8 @@
 {
   imports = [
+    ./quickshell/quickshell.nix
     ./hyprland.nix
-    ./quickshell.nix
-    ./rofi.nix
   ];
+
+  programs.fuzzel.enable = true;
 }

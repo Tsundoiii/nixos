@@ -62,9 +62,13 @@
     }
   ];
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
+  hardware = {
+    graphics.enable = true;
+
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
   };
 
   time.timeZone = "America/Indiana/Indianapolis";
@@ -87,6 +91,7 @@
     inputMethod = {
       enable = true;
       type = "ibus";
+
       ibus.engines = with pkgs.ibus-engines; [
         rime
         mozc-ut
@@ -95,14 +100,27 @@
   };
 
   services = {
+    fwupd.enable = true;
+    upower.enable = true;
+    usbmuxd.enable = true;
+    printing.enable = true;
+    blueman.enable = true;
+
     btrfs.autoScrub = {
       enable = true;
       fileSystems = [ "/" ];
     };
 
-    displayManager.gdm = {
+    greetd = {
       enable = true;
-      wayland = true;
+      settings = rec {
+        initial_session = {
+          command = "${pkgs.hyprland}/bin/hyprland";
+          user = "tsundoiii";
+        };
+
+        default_session = initial_session;
+      };
     };
 
     xserver = {
@@ -120,12 +138,6 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-
-    fwupd.enable = true;
-    upower.enable = true;
-    usbmuxd.enable = true;
-    printing.enable = true;
-    blueman.enable = true;
   };
 
   networking.networkmanager.enable = true;
@@ -145,8 +157,6 @@
       enable = true;
       defaultEditor = true;
     };
-
-    hyprlock.enable = true;
 
     git.enable = true;
     steam.enable = true;

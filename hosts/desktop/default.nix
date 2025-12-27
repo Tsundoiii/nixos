@@ -5,9 +5,11 @@
 
   networking.hostName = "desktop";
 
-  services.printing.drivers = [ pkgs.hplipWithPlugin ];
+  environment.systemPackages = [ pkgs.simple-scan ];
 
   hardware = {
+    graphics.extraPackages = with pkgs; [ intel-vaapi-driver ];
+
     printers = {
       ensurePrinters = [
         {
@@ -27,5 +29,8 @@
     };
   };
 
-  environment.systemPackages = [ pkgs.simple-scan ];
+  services = {
+    xserver.videoDrivers = [ "modesetting" ];
+    printing.drivers = [ pkgs.hplipWithPlugin ];
+  };
 }

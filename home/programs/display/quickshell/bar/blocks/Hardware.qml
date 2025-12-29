@@ -1,11 +1,11 @@
 import Quickshell.Io
 import QtQuick
-import "utils"
+import "../../utils"
 
-BarBlock {
+Block {
     color: theme.aqua
 
-    BarText {
+    SystemText {
         property int cpu
         property int mem
         id: t

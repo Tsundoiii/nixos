@@ -1,8 +1,8 @@
 import Quickshell.Services.Pipewire
 import QtQuick
-import "utils"
+import "../../utils"
 
-BarBlock {
+Block {
     property PwNode sink: Pipewire.defaultAudioSink
 
     PwObjectTracker { 
@@ -11,8 +11,8 @@ BarBlock {
 
     color: sink.audio.muted ? theme.disabled(theme.purple) : theme.purple
     
-    BarText {
-        function volumeSymbol(sink: PwNode): string {
+    SystemText {
+        function symbol(sink: PwNode): string {
             if (sink.audio.muted) {
                 return ""
             } else if (sink.audio.volume === 0) {
@@ -24,6 +24,6 @@ BarBlock {
             }
         }
 
-        text: `${volumeSymbol(sink)} ${Math.round(sink?.audio.volume * 100)}%`
+        text: `${symbol(sink)} ${Math.round(sink?.audio.volume * 100)}%`
     }
 }

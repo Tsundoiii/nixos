@@ -1,12 +1,12 @@
 import Quickshell.Bluetooth
 import QtQuick
-import "utils"
+import "../../utils"
 
-BarBlock {
+Block {
     visible: Bluetooth.devices.values.some(device => device.connected)
     color: theme.blue
 
-    BarText {
+    SystemText {
         property var batterySymbols: {
             10: "󰤾",
             20: "󰤿",

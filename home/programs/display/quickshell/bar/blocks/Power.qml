@@ -1,13 +1,15 @@
 import Quickshell.Services.UPower
 import QtQuick
-import "utils"
+import "../../utils"
 
-BarBlock {
+Block {
     property int percent: Math.round(UPower.displayDevice.percentage * 100)
+
+    visible: UPower.displayDevice.isLaptopBattery
     color: UPower.onBattery ? (percent < 20 ? (percent < 10 ? theme.red : theme.yellow) : theme.green) : theme.disabled(theme.green)
     
-    BarText {
-        property var batterySymbols: {
+    SystemText {
+        property var symbols: {
             0: "󰂎",
             10: "󰁺",
             20: "󰁻",
@@ -22,9 +24,9 @@ BarBlock {
         }
 
         function batteryPercent(percent: int): string {
-            return UPower.displayDevice.isLaptopBattery ? `${batterySymbols[parseInt(percent / 10) * 10]} ${percent}% ` : ""
+            return `${symbols[parseInt(percent / 10) * 10]} ${percent}%`
         }
 
-        text: `${batteryPercent(percent)}⏻`
+        text: `${batteryPercent(percent)}`
     }
 }

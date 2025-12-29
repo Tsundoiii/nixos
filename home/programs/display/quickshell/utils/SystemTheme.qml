@@ -1,0 +1,46 @@
+pragma Singleton
+
+import Quickshell
+
+Singleton {
+    readonly property var theme: {
+        "bg_dim": "#1e2326",
+        "bg0": "#272e33",
+        "bg1": "#2e383c",
+        "bg2": "#374145",
+        "bg3": "#414b50",
+        "bg4": "#495156",
+        "bg5": "#4f5b58",
+
+        "bg_red": "#493b40",
+        "bg_yellow": "#45443c",
+        "bg_green": "#3c4841",
+        "bg_blue": "#384b55",
+        "bg_purple": "#463f48",
+        "bg_visual": "#4c3743",
+        "fg": "#d3c6aa",
+
+        "red": "#e67e80",
+        "yellow": "#dbbc7f",
+        "green": "#a7c080",
+        "blue": "#7fbbb3",
+        "purple": "#d699b6",
+        "aqua": "#83c092",
+        "orange": "#e69875",
+
+        "grey0": "#7a8478",
+        "grey1": "#859289",
+        "grey2": "#9da9a0",
+        "statusline1": this.green,
+        "statusline2": this.fg,
+        "statusline3": this.red,
+
+        "disabled": function (color) {
+            return `#40${color.substring(1)}`
+        }
+    }
+
+    function disabled(color) {
+        return `#40${color.substring(1)}`
+    }
+}

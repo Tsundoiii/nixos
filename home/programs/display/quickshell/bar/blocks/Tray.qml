@@ -1,37 +1,34 @@
-import Quickshell
-import Quickshell.Io
 import Quickshell.Services.SystemTray
 import QtQuick
 import QtQuick.Layouts
-import "utils"
+import "../../utils"
 
 Repeater {
     model: SystemTray.items
 
-    BarBlock {
+    Block {
         required property SystemTrayItem modelData
-
-        color: theme.yellow
+        
+        color: theme.orange
 
         RowLayout {
             Image {
                 source: modelData.icon
                 fillMode: Image.PreserveAspectFit
-                Layout.preferredHeight: parent.height
+                Layout.preferredHeight: tooltip.height
                 Layout.preferredWidth: paintedWidth
             }
 
-            BarText {
+            SystemText {
+                id: tooltip
+                visible: modelData.tooltipDescription
                 text: modelData.tooltipDescription
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: modelData.activate()
-                }
             }
 
-            QsMenuAnchor {
-                menu: modelData.menu
+            MouseArea {
+                visible: false
+                anchors.fill: parent
+                onClicked: modelData.activate()
             }
         }
     }

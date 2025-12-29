@@ -1,9 +1,9 @@
 import Quickshell
 import QtQuick
-import "utils"
+import "../../utils"
 
-BarBlock {
-    BarText {
+Block {
+    SystemText {
         text: Qt.formatDateTime(clock.date, "ddd • MMM d • hh:mm t")
     }
 }

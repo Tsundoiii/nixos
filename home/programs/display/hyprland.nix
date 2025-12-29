@@ -106,7 +106,7 @@ in
         ", XF86AudioRaiseVolume, exec, pamixer -i 5"
         ", XF86AudioLowerVolume, exec, pamixer -d 5"
         ", XF86AudioMute, exec, pamixer -t"
-        ", XF86AudioMicMute, exec, pamixer --default-source -m"
+        ", XF86AudioMicMute, exec, pamixer --default-source -t"
         ", F11, fullscreen"
         ", Print, exec, sh ${screenshot}"
 

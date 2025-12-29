@@ -1,6 +1,7 @@
 import Quickshell
 import Quickshell.Wayland
 import Quickshell.Services.Pam
+import QtQuick.Controls
 import "auth"
 
 ShellRoot {
@@ -37,6 +38,14 @@ ShellRoot {
             LockScreen {
                 id: lockScreen
                 auth: pam
+
+                Button {
+                    text: "Unlock"
+                    onClicked: {
+                        lock.locked = false
+                        Qt.quit()
+                    }
+                }
             }
         }
     }

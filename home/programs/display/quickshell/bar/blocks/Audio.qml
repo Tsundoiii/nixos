@@ -9,7 +9,7 @@ Block {
         objects: [sink]
     }
 
-    color: sink.audio.muted ? theme.disabled(theme.purple) : theme.purple
+    color: sink.audio.muted ? theme.disabled(theme.aqua) : theme.aqua
     
     SystemText {
         function symbol(sink: PwNode): string {

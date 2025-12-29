@@ -3,7 +3,7 @@ import QtQuick
 import "../../utils"
 
 Block {
-    color: theme.aqua
+    color: theme.purple
 
     SystemText {
         property int cpu

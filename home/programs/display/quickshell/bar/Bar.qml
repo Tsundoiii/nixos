@@ -49,11 +49,9 @@ Scope {
                     Layout.alignment: Qt.AlignRight
                     Layout.margins: (bar.height - height) / 2
 
-                    Text {
-                        text: `${t.theme}`
-                    }
-
                     Tray {}
+
+                    Bluetooth {}
 
                     Hardware {}
 

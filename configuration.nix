@@ -160,6 +160,7 @@
 
     git.enable = true;
     steam.enable = true;
+    ssh.startAgent = true;
   };
 
   environment = {

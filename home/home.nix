@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  imports = [ ./programs ];
+
   programs.home-manager.enable = true;
 
   home = {
@@ -20,15 +22,10 @@
 
       nixd
       nixfmt-rfc-style
-      #kicad
-
-      #texlive.combined.scheme-medium
 
       prismlauncher
     ];
   };
 
-  imports = [
-    ./programs
-  ];
+  stylix.targets.fuzzel.fonts.enable = false;
 }

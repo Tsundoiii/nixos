@@ -14,11 +14,7 @@
       persistent = true;
       runGarbageCollection = true;
 
-      flags = [
-        "--update-input"
-        "nixpkgs"
-        "--commit-lock-file"
-      ];
+      flags = [ "--recreate-lock-file" ];
     };
   };
 
@@ -101,6 +97,7 @@
 
   services = {
     fwupd.enable = true;
+    gvfs.enable = true;
     upower.enable = true;
     usbmuxd.enable = true;
     printing.enable = true;

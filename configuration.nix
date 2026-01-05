@@ -112,7 +112,7 @@
       enable = true;
       settings = rec {
         initial_session = {
-          command = "${pkgs.hyprland}/bin/hyprland";
+          command = "${pkgs.hyprland}/bin/start-hyprland";
           user = "tsundoiii";
         };
 
@@ -145,6 +145,11 @@
   };
 
   programs = {
+    git = {
+      enable = true;
+      config.safe.directory = "/etc/nixos";
+    };
+
     hyprland = {
       enable = true;
       withUWSM = true;
@@ -155,7 +160,6 @@
       defaultEditor = true;
     };
 
-    git.enable = true;
     steam.enable = true;
     ssh.startAgent = true;
   };

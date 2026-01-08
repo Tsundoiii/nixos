@@ -12,7 +12,7 @@
       keyboards.default = {
         ids = [ "*" ];
 
-        settings.main.leftctrl = "noop";
+        settings.main.leftcontrol = "noop";
       };
     };
   };

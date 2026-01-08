@@ -9,7 +9,7 @@
     keyd = {
       enable = true;
 
-      default = {
+      keyboards.default = {
         ids = [ "*" ];
 
         settings.main.leftctrl = "noop";

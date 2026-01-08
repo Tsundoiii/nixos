@@ -3,7 +3,19 @@
 
   networking.hostName = "laptop";
 
-  services.fprintd.enable = true;
+  services = {
+    fprintd.enable = true;
+
+    keyd = {
+      enable = true;
+
+      default = {
+        ids = [ "*" ];
+
+        settings.main.leftctrl = "noop";
+      };
+    };
+  };
 
   hardware = {
     printers = {

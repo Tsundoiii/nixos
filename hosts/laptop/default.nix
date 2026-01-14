@@ -3,6 +3,8 @@
 
   networking.hostName = "laptop";
 
+  boot.loader.timeout = 2;
+
   services = {
     fprintd.enable = true;
 

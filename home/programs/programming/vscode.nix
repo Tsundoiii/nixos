@@ -39,6 +39,8 @@
         ms-vscode-remote.remote-ssh
         mkhl.direnv
         jnoortheen.nix-ide
+        ms-python.python
+        rust-lang.rust-analyzer
       ];
     };
   };

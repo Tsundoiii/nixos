@@ -1,6 +1,12 @@
 { lib, ... }:
 
 let
+  background = builtins.toFile "background.sh" ''
+    response=$(curl https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY)
+    echo $response | jq ".url" | xargs curl -o /tmp/background.jpg
+    hyprctl hyprpaper wallpaper ", /tmp/background.jpg, cover"
+  '';
+
   menu = prompt: options: ''
     case $(echo -e "${builtins.concatStringsSep "\\n" (builtins.catAttrs "name" options)}" | fuzzel --dmenu --prompt="${prompt}") in
       ${lib.strings.concatMapStrings (option: ''
@@ -96,6 +102,7 @@ in
       exec-once = [
         "firefox"
         "ibus start --type wayland"
+        "sh ${background}"
       ];
 
       xwayland.force_zero_scaling = true;

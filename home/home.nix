@@ -17,11 +17,12 @@
       mpv
       qimgv
       grimblast
+      jq
 
       discord
 
       nixd
-      nixfmt-rfc-style
+      nixfmt
 
       prismlauncher
     ];

@@ -37,7 +37,9 @@
 
       extensions = with pkgs.vscode-extensions; [
         ms-vscode-remote.remote-ssh
+        usernamehw.errorlens
         mkhl.direnv
+
         jnoortheen.nix-ide
         ms-python.python
         rust-lang.rust-analyzer

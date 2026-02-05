@@ -1,16 +1,6 @@
-{ pkgs, ... }:
-
 {
   programs = {
-    password-store = {
-      enable = true;
-
-      package = pkgs.pass.withExtensions (
-        exts: with exts; [
-          pass-import
-        ]
-      );
-    };
+    password-store.enable = true;
 
     browserpass = {
       enable = true;

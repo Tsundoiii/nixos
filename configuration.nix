@@ -162,6 +162,7 @@
 
     steam.enable = true;
     ssh.startAgent = true;
+    gnupg.agent.enable = true;
   };
 
   environment = {

@@ -5,6 +5,4 @@
     ./vim.nix
     ./vscode.nix
   ];
-
-  programs.alacritty.enable = true;
 }

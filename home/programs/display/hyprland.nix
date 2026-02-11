@@ -108,6 +108,8 @@ in
         ", XF86AudioLowerVolume, exec, pamixer -d 5"
         ", XF86AudioMute, exec, pamixer -t"
         ", XF86AudioMicMute, exec, pamixer --default-source -t"
+        ", XF86Tools, exec, code /etc/nixos"
+        ", XF86Bluetooth, exec, blueman-manager"
         ", F11, fullscreen"
         ", Print, exec, sh ${screenshot}"
 

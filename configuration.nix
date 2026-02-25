@@ -108,17 +108,17 @@
       fileSystems = [ "/" ];
     };
 
-    greetd = {
-      enable = true;
-      settings = rec {
-        initial_session = {
-          command = "${pkgs.hyprland}/bin/start-hyprland";
-          user = "tsundoiii";
-        };
+    # greetd = {
+    #   enable = true;
+    #   settings = rec {
+    #     initial_session = {
+    #       command = "${pkgs.hyprland}/bin/start-hyprland";
+    #       user = "tsundoiii";
+    #     };
 
-        default_session = initial_session;
-      };
-    };
+    #     default_session = initial_session;
+    #   };
+    # };
 
     xserver = {
       enable = true;
@@ -150,25 +150,21 @@
       config.safe.directory = "/etc/nixos";
     };
 
-    hyprland = {
-      enable = true;
-      withUWSM = true;
-    };
-
     vim = {
       enable = true;
       defaultEditor = true;
     };
 
-    steam.enable = true;
-    ssh.startAgent = true;
+    niri.enable = true;
     gnupg.agent.enable = true;
+    steam.enable = true;
   };
 
   environment = {
-    sessionVariables.XDG_SCREENSHOTS_DIR = "$HOME/Pictures/Screenshots";
+    sessionVariables.NIXOS_OZONE_WL = "1";
 
     systemPackages = with pkgs; [
+      xwayland-satellite
       pamixer
       brightnessctl
       libimobiledevice

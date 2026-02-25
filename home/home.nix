@@ -16,7 +16,6 @@
       kdePackages.filelight
       mpv
       qimgv
-      grimblast
       jq
 
       discord

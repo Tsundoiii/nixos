@@ -7,6 +7,7 @@
 
   services = {
     fprintd.enable = true;
+    upower.enable = true;
 
     keyd = {
       enable = true;

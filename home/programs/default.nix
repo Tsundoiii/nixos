@@ -1,7 +1,0 @@
-{
-  imports = [
-    ./display
-    ./programming
-    ./system
-  ];
-}

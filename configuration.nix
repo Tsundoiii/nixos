@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { pkgs, ... }:
 
 {
@@ -98,7 +94,6 @@
   services = {
     fwupd.enable = true;
     gvfs.enable = true;
-    upower.enable = true;
     usbmuxd.enable = true;
     printing.enable = true;
     blueman.enable = true;
@@ -120,6 +115,8 @@
     #   };
     # };
 
+    displayManager.gdm.enable = true;
+
     xserver = {
       enable = true;
 
@@ -139,10 +136,7 @@
 
   networking.networkmanager.enable = true;
 
-  security = {
-    rtkit.enable = true;
-    pam.services.hyprlock = { };
-  };
+  security.rtkit.enable = true;
 
   programs = {
     git = {
@@ -161,11 +155,13 @@
   };
 
   environment = {
-    sessionVariables.NIXOS_OZONE_WL = "1";
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+      NIRI_CONFIG = "/etc/nixos/home/display/config.kdl";
+    };
 
     systemPackages = with pkgs; [
       xwayland-satellite
-      pamixer
       brightnessctl
       libimobiledevice
       ifuse

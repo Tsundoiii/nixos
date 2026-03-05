@@ -5,21 +5,24 @@ let
   };
 
   settings = {
-    "browser.aboutConfig.showWarning" = false;
-    "browser.newtabpage.activity-stream.showSponsored" = false;
-    "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
-    "browser.newtabpage.activity-stream.weather.display" = false;
-    "browser.privatebrowsing.autostart" = true;
-    "browser.urlbar.suggest.history" = false;
+    browser = {
+      aboutConfig.showWarning = false;
+      newtabpage.activity-stream.showSponsored = false;
+      newtabpage.activity-stream.showSponsoredTopSites = false;
+      newtabpage.activity-stream.weather.display = false;
+      privatebrowsing.autostart = true;
+      urlbar.suggest.history = false;
+    };
 
-    "devtools.toolbox.host" = "right";
+    devtools.toolbox.host = "right";
 
-    "extensions.autoDisableScopes" = 0;
+    extensions.autoDisableScopes = 0;
   };
 in
 {
   programs.firefox = {
     enable = true;
+    
     languagePacks = [ "en-US" ];
 
     policies = {
@@ -53,7 +56,7 @@ in
         inherit search;
 
         settings = settings // {
-          "browser.newtabpage.pinned" = [
+          browser.newtabpage.pinned = [
             {
               title = "YouTube";
               url = "https://www.youtube.com";
@@ -78,8 +81,8 @@ in
         inherit search;
 
         settings = settings // {
-          "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
-          "browser.newtabpage.pinned" = [
+          browser.newtabpage.activity-stream.feeds.section.topstories = false;
+          browser.newtabpage.pinned = [
             {
               title = "myPurdue";
               url = "https://mypurdue.purdue.edu";
@@ -126,7 +129,7 @@ in
             }
           ];
 
-          "sidebar.verticalTabs" = true;
+          sidebar.verticalTabs = true;
         };
       };
     };

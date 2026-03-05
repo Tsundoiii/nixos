@@ -5,6 +5,17 @@
     enable = true;
 
     profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+        ms-vscode-remote.remote-ssh
+        usernamehw.errorlens
+        mkhl.direnv
+
+        jnoortheen.nix-ide
+        ms-python.python
+        rust-lang.rust-analyzer
+        ms-vscode.cpptools
+      ];
+
       userSettings = {
         "workbench.secondarySideBar.defaultVisibility" = "hidden";
 
@@ -32,18 +43,9 @@
         };
 
         "python.analysis.typeCheckingMode" = "strict";
-        "latex-workshop.formatting.latex" = "latexindent";
+
+        "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
       };
-
-      extensions = with pkgs.vscode-extensions; [
-        ms-vscode-remote.remote-ssh
-        usernamehw.errorlens
-        mkhl.direnv
-
-        jnoortheen.nix-ide
-        ms-python.python
-        rust-lang.rust-analyzer
-      ];
     };
   };
 }

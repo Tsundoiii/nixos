@@ -1,12 +1,16 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./programs ];
+  imports = [
+    ./display
+    ./programming
+    ./system
+  ];
 
   programs.home-manager.enable = true;
 
   home = {
-    stateVersion = "25.05";
+    stateVersion = "26.05";
 
     username = "tsundoiii";
     homeDirectory = "/home/tsundoiii";
@@ -17,6 +21,8 @@
       mpv
       qimgv
       jq
+
+      typst
 
       discord
 

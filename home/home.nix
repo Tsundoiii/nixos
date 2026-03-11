@@ -16,7 +16,7 @@
     homeDirectory = "/home/tsundoiii";
 
     packages = with pkgs; [
-      kdePackages.dolphin
+      nautilus
       kdePackages.filelight
       mpv
       qimgv

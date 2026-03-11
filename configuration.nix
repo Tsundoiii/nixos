@@ -2,14 +2,13 @@
 
 {
   system = {
-    stateVersion = "25.05";
+    stateVersion = "26.05";
 
     autoUpgrade = {
       enable = true;
       dates = "weekly";
       persistent = true;
       runGarbageCollection = true;
-
       flags = [ "--recreate-lock-file" ];
     };
   };
@@ -139,6 +138,10 @@
   security.rtkit.enable = true;
 
   programs = {
+    niri.enable = true;
+    gnupg.agent.enable = true;
+    steam.enable = true;
+
     git = {
       enable = true;
       config.safe.directory = "/etc/nixos";
@@ -148,10 +151,6 @@
       enable = true;
       defaultEditor = true;
     };
-
-    niri.enable = true;
-    gnupg.agent.enable = true;
-    steam.enable = true;
   };
 
   environment = {
@@ -171,6 +170,7 @@
   users.users.tsundoiii = {
     isNormalUser = true;
     description = "Tsundoiii";
+
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -188,7 +188,6 @@
 
   stylix = {
     enable = true;
-
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
 

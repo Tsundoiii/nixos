@@ -7,6 +7,8 @@
       mode = "rgb";
       light_dark = "dark";
       lightness = 0.65;
+      backend = "neofetch";
+      pride_month_disable = false;
 
       color_align = {
         mode = "custom";
@@ -16,9 +18,6 @@
             "2" = 0;
         };
       };
-
-      backend = "neofetch";
-      pride_month_disable = false;
     };
   };
 }

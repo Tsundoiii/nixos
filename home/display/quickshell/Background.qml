@@ -18,6 +18,9 @@ Scope {
             implicitWidth: modelData.width
             implicitHeight: modelData.height
 
+            id: background
+            visible: false
+
             Image {
                 anchors.fill: parent
                 
@@ -31,6 +34,7 @@ Scope {
 
                     id: explanation
                     font.pixelSize: 12
+                    font.bold: true
                     padding: 15
                     color: theme.fg
                     wrapMode: Text.WordWrap
@@ -60,7 +64,7 @@ Scope {
                         picture.source = response.url
                     }
                     
-                    picture.visible = true
+                    background.visible = true
                     explanation.text = response.explanation
                 }
 

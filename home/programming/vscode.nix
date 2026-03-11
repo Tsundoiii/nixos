@@ -18,6 +18,10 @@
 
       userSettings = {
         "workbench.secondarySideBar.defaultVisibility" = "hidden";
+        "files.autoSave" = "onFocusChange";
+        "explorer.confirmDragAndDrop" = false;
+        "telemetry.telemetryLevel" = "error";
+        "update.mode" = "none";
 
         "git.autofetch" = true;
         "git.confirmSync" = false;
@@ -28,9 +32,8 @@
         "editor.formatOnType" = true;
         "editor.bracketPairColorization.independentColorPoolPerBracketType" = true;
 
-        "files.autoSave" = "onFocusChange";
-        "explorer.confirmDragAndDrop" = false;
-        "telemetry.telemetryLevel" = "error";
+        "python.analysis.typeCheckingMode" = "strict";
+        "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
 
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nixd";
@@ -41,10 +44,6 @@
             };
           };
         };
-
-        "python.analysis.typeCheckingMode" = "strict";
-
-        "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
       };
     };
   };

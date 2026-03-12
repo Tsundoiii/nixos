@@ -7,8 +7,8 @@
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
         ms-vscode-remote.remote-ssh
-        usernamehw.errorlens
         mkhl.direnv
+        usernamehw.errorlens
 
         jnoortheen.nix-ide
         ms-python.python

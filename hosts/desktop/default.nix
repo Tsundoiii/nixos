@@ -11,6 +11,8 @@
     graphics.extraPackages = with pkgs; [ intel-vaapi-driver ];
 
     printers = {
+      ensureDefaultPrinter = "Printer";
+
       ensurePrinters = [
         {
           name = "Printer";
@@ -19,8 +21,6 @@
           deviceUri = "usb://HP/LaserJet%20Professional%20M1212nf%20MFP?serial=000000000QJ46WG1PR1a";
         }
       ];
-
-      ensureDefaultPrinter = "Printer";
     };
 
     sane = {
@@ -31,6 +31,7 @@
 
   services = {
     xserver.videoDrivers = [ "modesetting" ];
+
     printing.drivers = [ pkgs.hplipWithPlugin ];
   };
 }

@@ -1,7 +1,8 @@
 {
   programs.quickshell = {
     enable = true;
-    systemd.enable = true;
     activeConfig = "/etc/nixos/home/display/quickshell";
+
+    systemd.enable = true;
   };
 }

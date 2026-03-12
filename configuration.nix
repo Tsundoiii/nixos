@@ -21,16 +21,16 @@
   nixpkgs.config.allowUnfree = true;
 
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+
     loader = {
+      efi.canTouchEfiVariables = true;
+
       systemd-boot = {
         enable = true;
         configurationLimit = 2;
       };
-
-      efi.canTouchEfiVariables = true;
     };
-
-    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   fileSystems = {
@@ -139,11 +139,14 @@
 
   programs = {
     niri.enable = true;
+
     gnupg.agent.enable = true;
+
     steam.enable = true;
 
     git = {
       enable = true;
+
       config.safe.directory = "/etc/nixos";
     };
 

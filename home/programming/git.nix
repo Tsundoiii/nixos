@@ -4,17 +4,17 @@
 
     signing = {
       format = "ssh";
-      signByDefault = true;
       key = "/home/tsundoiii/.ssh/id_ed25519.pub";
+      signByDefault = true;
     };
 
     settings = {
+      init.defaultBranch = "main";
+
       user = {
         name = "Tsundoiii";
         email = "dev@tsundoiii.dev";
       };
-
-      init.defaultBranch = "main";
     };
   };
 }

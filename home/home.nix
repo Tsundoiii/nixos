@@ -20,11 +20,9 @@
       kdePackages.filelight
       mpv
       qimgv
-      jq
+      discord
 
       typst
-
-      discord
 
       nixd
       nixfmt

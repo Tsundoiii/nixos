@@ -14,6 +14,8 @@
         ms-python.python
         rust-lang.rust-analyzer
         ms-vscode.cpptools
+
+        mechatroner.rainbow-csv
       ];
 
       userSettings = {

@@ -164,6 +164,7 @@
 
     systemPackages = with pkgs; [
       xwayland-satellite
+      usbutils
       brightnessctl
       libimobiledevice
       ifuse

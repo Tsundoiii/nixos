@@ -11,6 +11,8 @@
     settings = {
       init.defaultBranch = "main";
 
+      push.autoSetupRemote = true;
+
       user = {
         name = "Tsundoiii";
         email = "dev@tsundoiii.dev";

@@ -21,6 +21,7 @@
       mpv
       qimgv
       discord
+      spotify
 
       typst
 

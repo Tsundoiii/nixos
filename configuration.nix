@@ -135,7 +135,11 @@
 
   networking.networkmanager.enable = true;
 
-  security.rtkit.enable = true;
+  security = {
+    rtkit.enable = true;
+
+    sudo.extraConfig = "Defaults pwfeedback";
+  };
 
   programs = {
     niri.enable = true;
@@ -157,10 +161,7 @@
   };
 
   environment = {
-    sessionVariables = {
-      NIXOS_OZONE_WL = "1";
-      NIRI_CONFIG = "/etc/nixos/home/display/config.kdl";
-    };
+    sessionVariables.NIRI_CONFIG = "/etc/nixos/home/display/config.kdl";
 
     systemPackages = with pkgs; [
       xwayland-satellite

@@ -39,7 +39,7 @@
 
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nixd";
-        "nix.hiddenLanguageServerErrors" = true;
+        "nix.hiddenLanguageServerErrors" = [ "textDocument/formatting" ];
         "nix.serverSettings" = {
           "nixd" = {
             "formatting" = {

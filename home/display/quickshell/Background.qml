@@ -1,8 +1,9 @@
-import Quickshell
-import Quickshell.Wayland
-import Quickshell.Io
 import QtQuick
 import QtQuick.Layouts
+import Quickshell
+import Quickshell.Io
+import Quickshell.Wayland
+
 import "utils"
 
 Scope {
@@ -19,7 +20,8 @@ Scope {
             implicitHeight: modelData.height
 
             id: background
-            visible: false
+            visible: true
+            color: theme.bg5
 
             Image {
                 anchors.fill: parent
@@ -33,21 +35,45 @@ Scope {
                     anchors.right: parent.right
 
                     id: explanation
-                    font.pixelSize: 12
-                    font.bold: true
                     padding: 15
                     color: theme.fg
                     wrapMode: Text.WordWrap
-                    horizontalAlignment: Text.AlignHCenter
+
+                    font: {
+                        "family": "DejaVuSansM Nerd Font Mono",
+                        "bold": true,
+                        "pixelSize": 12
+                    }
                 }
 
                 function getAPOD(callback) {
                     const xhr = new XMLHttpRequest()
-                    xhr.open("GET", "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&thumbs=True")
+                    let url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&thumbs=True"
+
+                    if (modelData.name === "HDMI-1") {
+                        const now = new Date();
+                        const currentYear = now.getFullYear()
+                        const startYear = now.getMonth() >= 5 ? 1995 : 1996
+                        let year = Math.random() * (currentYear - startYear)
+
+                        if (now.getMonth() === 1 && now.getDate() === 29) {
+                            year = Math.round(year / 4) * 4
+                        }
+                        
+                        year += startYear
+                        now.setFullYear(year)
+                        url += `&date=${Qt.formatDate(now, "yyyy-MM-dd")}`
+                    }
+
+                    xhr.open("GET", url)
 
                     xhr.onreadystatechange = function() {
+                        if (xhr.status != 200) {
+                            console.error(`APOD retrieval failed with error ${xhr.status}`)
+                            return
+                        }
+
                         if (xhr.readyState === XMLHttpRequest.DONE) {
-                            console.log(xhr.responseText)
                             callback(JSON.parse(xhr.responseText))
                         }
                     }
@@ -66,9 +92,13 @@ Scope {
                     
                     background.visible = true
                     explanation.text = response.explanation
+
+                    if (response.date.slice(0, 4) != new Date().getFullYear()) {
+                        explanation.text += `\n${response.date}`
+                    }
                 }
 
-                Component.onCompleted: { getAPOD(setBackground) }
+                Component.onCompleted: getAPOD(setBackground)
             }
         }
     }

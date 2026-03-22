@@ -1,6 +1,7 @@
-import Quickshell.Services.SystemTray
 import QtQuick
 import QtQuick.Layouts
+import Quickshell.Services.SystemTray
+
 import "../../utils"
 
 RowLayout {
@@ -9,10 +10,12 @@ RowLayout {
 
         Block {
             required property SystemTrayItem modelData
+
+            property int blockHeight: bar.height - 2 * margin
             
             color: theme.orange
-            Layout.preferredWidth: bar.height - 2 * margin
-            Layout.preferredHeight: bar.height - 2 * margin
+            Layout.preferredWidth: blockHeight
+            Layout.preferredHeight: blockHeight
 
             Image {
                 id: icon

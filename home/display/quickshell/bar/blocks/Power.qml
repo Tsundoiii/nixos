@@ -1,5 +1,6 @@
-import Quickshell.Services.UPower
 import QtQuick
+import Quickshell.Services.UPower
+
 import "../../utils"
 
 Block {
@@ -27,6 +28,6 @@ Block {
             return `${symbols[parseInt(percent / 10) * 10]} ${percent}%`
         }
 
-        text: `${batteryPercent(percent)}`
+        text: batteryPercent(percent)
     }
 }

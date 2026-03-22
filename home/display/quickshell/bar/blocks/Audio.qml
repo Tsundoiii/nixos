@@ -1,15 +1,16 @@
-import Quickshell.Services.Pipewire
 import QtQuick
+import Quickshell.Services.Pipewire
+
 import "../../utils"
 
 Block {
     property PwNode sink: Pipewire.defaultAudioSink
 
+    color: sink.audio.muted ? theme.disabled(theme.aqua) : theme.aqua
+
     PwObjectTracker { 
         objects: [sink]
     }
-
-    color: sink.audio.muted ? theme.disabled(theme.aqua) : theme.aqua
     
     SystemText {
         function symbol(sink: PwNode): string {

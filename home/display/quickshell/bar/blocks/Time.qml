@@ -1,5 +1,6 @@
-import Quickshell
 import QtQuick
+import Quickshell
+
 import "../../utils"
 
 Block {

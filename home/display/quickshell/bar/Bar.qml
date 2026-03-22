@@ -1,7 +1,7 @@
-import Quickshell
-import Quickshell.Widgets
 import QtQuick
 import QtQuick.Layouts
+import Quickshell
+import Quickshell.Widgets
 import "blocks"
 import "../utils"
 
@@ -18,8 +18,8 @@ Scope {
             required property ShellScreen modelData
 
             id: bar
-            implicitHeight: 40
             color: theme.bg0
+            implicitHeight: 40
 
             anchors {
                 top: true
@@ -39,30 +39,20 @@ Scope {
 
                     Tray {}
 
-                    Bluetooth {
-                        Layout.preferredHeight: bar.height - 2 * margin
-                    }
+                    Bluetooth {}
                 }
 
                 RowLayout {
                     Layout.alignment: Qt.AlignRight
                     Layout.rightMargin: 5
 
-                    Hardware {
-                        Layout.preferredHeight: bar.height - 2 * margin
-                    }
+                    Hardware {}
 
-                    Network {
-                        Layout.preferredHeight: bar.height - 2 * margin
-                    }
+                    Network {}
 
-                    Audio {
-                        Layout.preferredHeight: bar.height - 2 * margin
-                    }
+                    Audio {}
 
-                    Power {
-                        Layout.preferredHeight: bar.height - 2 * margin
-                    }
+                    Power {}
                 }
             }
         }

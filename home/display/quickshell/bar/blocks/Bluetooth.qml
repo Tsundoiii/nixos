@@ -1,5 +1,6 @@
-import Quickshell.Bluetooth
 import QtQuick
+import Quickshell.Bluetooth
+
 import "../../utils"
 
 Block {

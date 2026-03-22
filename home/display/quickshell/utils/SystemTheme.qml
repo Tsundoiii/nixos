@@ -35,12 +35,12 @@ Singleton {
         "statusline2": this.fg,
         "statusline3": this.red,
 
-        "disabled": function (color) {
+        "disabled": function (color: color): color {
             return `#40${color.substring(1)}`
         }
     }
 
-    function disabled(color) {
+    function disabled(color: color): color {
         return `#40${color.substring(1)}`
     }
 }

@@ -8,7 +8,7 @@
   environment.systemPackages = [ pkgs.simple-scan ];
 
   hardware = {
-    graphics.extraPackages = with pkgs; [ intel-vaapi-driver ];
+    graphics.extraPackages = [ pkgs.intel-vaapi-driver ];
 
     printers = {
       ensureDefaultPrinter = "Printer";

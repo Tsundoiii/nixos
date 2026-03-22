@@ -39,12 +39,14 @@
       ];
     in
     {
-      nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
-        modules = modules ++ [ ./hosts/desktop ];
-      };
+      nixosConfigurations = {
+        desktop = nixpkgs.lib.nixosSystem {
+          modules = modules ++ [ ./hosts/desktop ];
+        };
 
-      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-        modules = modules ++ [ ./hosts/laptop ];
+        laptop = nixpkgs.lib.nixosSystem {
+          modules = modules ++ [ ./hosts/laptop ];
+        };
       };
     };
 }

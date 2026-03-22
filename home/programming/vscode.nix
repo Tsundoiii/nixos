@@ -1,52 +1,71 @@
 { pkgs, ... }:
 
+let
+  userSettings = {
+    "workbench.secondarySideBar.defaultVisibility" = "hidden";
+    "files.autoSave" = "onFocusChange";
+    "explorer.confirmDragAndDrop" = false;
+    "telemetry.telemetryLevel" = "error";
+    "update.mode" = "none";
+
+    "git.autofetch" = true;
+    "git.confirmSync" = false;
+    "git.openRepositoryInParentFolders" = "always";
+
+    "editor.formatOnSave" = true;
+    "editor.formatOnPaste" = true;
+    "editor.formatOnType" = true;
+    "editor.bracketPairColorization.independentColorPoolPerBracketType" = true;
+
+    "python.analysis.typeCheckingMode" = "strict";
+    "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
+
+    "nix.enableLanguageServer" = true;
+    "nix.serverPath" = "nixd";
+    "nix.hiddenLanguageServerErrors" = [ "textDocument/formatting" ];
+    "nix.serverSettings" = {
+      "nixd" = {
+        "formatting" = {
+          "command" = [ "nixfmt" ];
+        };
+      };
+    };
+  };
+
+  extensions = with pkgs.vscode-extensions; [
+    mkhl.direnv
+    usernamehw.errorlens
+  ];
+in
 {
   programs.vscode = {
     enable = true;
 
-    profiles.default = {
-      extensions = with pkgs.vscode-extensions; [
-        ms-vscode-remote.remote-ssh
-        mkhl.direnv
-        usernamehw.errorlens
+    profiles = {
+      default = {
+        inherit userSettings;
 
-        jnoortheen.nix-ide
-        ms-python.python
-        rust-lang.rust-analyzer
-        ms-vscode.cpptools
+        extensions =
+          extensions
+          ++ (with pkgs.vscode-extensions; [
+            ms-vscode-remote.remote-ssh
 
-        mechatroner.rainbow-csv
-      ];
+            jnoortheen.nix-ide
+            ms-python.python
+            rust-lang.rust-analyzer
 
-      userSettings = {
-        "workbench.secondarySideBar.defaultVisibility" = "hidden";
-        "files.autoSave" = "onFocusChange";
-        "explorer.confirmDragAndDrop" = false;
-        "telemetry.telemetryLevel" = "error";
-        "update.mode" = "none";
+            mechatroner.rainbow-csv
+          ]);
+      };
 
-        "git.autofetch" = true;
-        "git.confirmSync" = false;
-        "git.openRepositoryInParentFolders" = "always";
+      psr = {
+        inherit userSettings;
 
-        "editor.formatOnSave" = true;
-        "editor.formatOnPaste" = true;
-        "editor.formatOnType" = true;
-        "editor.bracketPairColorization.independentColorPoolPerBracketType" = true;
-
-        "python.analysis.typeCheckingMode" = "strict";
-        "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
-
-        "nix.enableLanguageServer" = true;
-        "nix.serverPath" = "nixd";
-        "nix.hiddenLanguageServerErrors" = [ "textDocument/formatting" ];
-        "nix.serverSettings" = {
-          "nixd" = {
-            "formatting" = {
-              "command" = [ "nixfmt" ];
-            };
-          };
-        };
+        extensions =
+          extensions
+          ++ (with pkgs.vscode-extensions; [
+            ms-vscode.cpptools
+          ]);
       };
     };
   };

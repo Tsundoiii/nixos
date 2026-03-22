@@ -182,6 +182,11 @@ in
                   name = "Oh Shit, Git!?!";
                   url = "https://ohshitgit.com";
                 }
+
+                {
+                  name = "cat -v Harmful";
+                  url = "https://harmful.cat-v.org";
+                }
               ];
             }
 
@@ -476,11 +481,6 @@ in
               {
                 title = "PaperCut";
                 url = "https://wpvapppcprt01.itap.purdue.edu:9192/user";
-              }
-
-              {
-                title = "Wikipedia";
-                url = "https://en.wikipedia.org";
               }
             ];
           };

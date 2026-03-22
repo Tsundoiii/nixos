@@ -6,6 +6,8 @@
     ./starship.nix
   ];
 
+  services.mako.enable = true;
+
   programs = {
     bash.enable = true;
     alacritty.enable = true;

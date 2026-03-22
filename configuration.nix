@@ -94,12 +94,20 @@
     fwupd.enable = true;
     gvfs.enable = true;
     usbmuxd.enable = true;
-    printing.enable = true;
     blueman.enable = true;
 
     btrfs.autoScrub = {
       enable = true;
       fileSystems = [ "/" ];
+    };
+
+    xserver = {
+      enable = true;
+
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
     };
 
     # greetd = {
@@ -116,20 +124,20 @@
 
     displayManager.gdm.enable = true;
 
-    xserver = {
-      enable = true;
-
-      xkb = {
-        layout = "us";
-        variant = "";
-      };
-    };
-
     pipewire = {
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+    };
+
+    printing = {
+      enable = true;
+
+      drivers = with pkgs; [
+        cups-filters
+        cups-browsed
+      ];
     };
   };
 
@@ -161,7 +169,10 @@
   };
 
   environment = {
-    sessionVariables.NIRI_CONFIG = "/etc/nixos/home/display/config.kdl";
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+      NIRI_CONFIG = "/etc/nixos/home/display/config.kdl";
+    };
 
     systemPackages = with pkgs; [
       xwayland-satellite

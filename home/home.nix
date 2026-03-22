@@ -20,6 +20,7 @@
       kdePackages.filelight
       mpv
       qimgv
+      libqalculate
       discord
 
       typst
@@ -28,6 +29,7 @@
       nixfmt
 
       prismlauncher
+      blahaj
     ];
   };
 

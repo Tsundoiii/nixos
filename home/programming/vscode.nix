@@ -52,6 +52,7 @@ in
 
             jnoortheen.nix-ide
             ms-python.python
+            ms-python.black-formatter
             rust-lang.rust-analyzer
 
             mechatroner.rainbow-csv

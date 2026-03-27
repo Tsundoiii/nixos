@@ -26,6 +26,8 @@
       modules = [
         ./configuration.nix
 
+        stylix.nixosModules.stylix
+
         home-manager.nixosModules.home-manager
         {
           home-manager = {
@@ -34,8 +36,6 @@
             users.tsundoiii = import ./home/home.nix;
           };
         }
-
-        stylix.nixosModules.stylix
       ];
     in
     {

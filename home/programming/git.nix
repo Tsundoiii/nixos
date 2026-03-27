@@ -1,10 +1,12 @@
+{ config, ... }:
+
 {
   programs.git = {
     enable = true;
 
     signing = {
       format = "ssh";
-      key = "/home/tsundoiii/.ssh/id_ed25519.pub";
+      key = "${config.home.homeDirectory}/.ssh/id_ed25519.pub";
       signByDefault = true;
     };
 

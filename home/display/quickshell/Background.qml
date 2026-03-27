@@ -82,9 +82,7 @@ Scope {
                 }
 
                 function setBackground(response) {
-                    if (response.hasOwnProperty("thumbnail_url")) {
-                        picture.source = response.thumbnail_url
-                    } else if (response.hasOwnProperty("hdurl")) {
+                    if (response.hasOwnProperty("hdurl")) {
                         picture.source = response.hdurl
                     } else {
                         picture.source = response.url

@@ -1,34 +1,60 @@
+{ config, ... }:
+
 let
-  ublock = "uBlock0@raymondhill.net";
   browserpass = "browserpass@maximbaz.com";
-  tenten = "{dedb3663-6f13-4c6c-bf0f-5bd111cb2c79}";
-  zhongwen = "{59812185-ea92-4cca-8ab7-cfcacee81281}";
+  ublock = "uBlock0@raymondhill.net";
+  zhongwen = "59812185-ea92-4cca-8ab7-cfcacee81281";
+  tenten = "dedb3663-6f13-4c6c-bf0f-5bd111cb2c79";
 
   extension = id: {
     installation_mode = "force_installed";
     private_browsing = true;
-    default_area = "navbar";
-    install_url = "https://addons.mozilla.org/firefox/downloads/latest/${id}/latest.xpi";
+    install_url = "https://addons.mozilla.org/firefox/downloads/latest/{${id}}/latest.xpi";
   };
 
   settings = {
-    extensions.autoDisableScopes = 0;
+    "identity.fxaccounts.enabled" = false;
 
-    devtools.toolbox.host = "right";
+    "toolbars.bookmarks.visibility" = false;
 
-    browser = {
-      privatebrowsing.autostart = true;
+    "devtools.toolbox.host" = "right";
 
-      urlbar.suggest.history = false;
+    "extensions.autoDisableScopes" = 0;
 
-      aboutConfig.showWarning = false;
+    "browser.privatebrowsing.autostart" = true;
+    "browser.urlbar.suggest.history" = false;
+    "browser.aboutConfig.showWarning" = false;
 
-      newtabpage = {
-        activity-stream.showSponsored = false;
-        activity-stream.showSponsoredTopSites = false;
-        activity-stream.system.showWeather = false;
+    "browser.screenshots.folderList" = 2;
+    "browser.screenshots.dir" = "${config.home.homeDirectory}/Pictures/Screenshots";
+
+    "browser.newtabpage.activity-stream.showSponsored" = false;
+    "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+    "browser.newtabpage.activity-stream.system.showWeather" = false;
+
+    "browser.uiCustomization.state" = {
+      currentVersion = 23;
+      newElementCount = 0;
+
+      placements = {
+        nav-bar = [
+          "back-button"
+          "forward-button"
+          "stop-reload-button"
+          "developer-button"
+          "downloads-button"
+          "urlbar-container"
+          "browserpass_maximbaz_com-browser-action"
+          "ublock0_raymondhill_net-browser-action"
+          "_${zhongwen}_-browser-action"
+          "_${tenten}_-browser-action"
+        ];
       };
     };
+
+    "signon.rememberSignons" = false;
+    "signon.autofillForms" = false;
+    "signon.generation.enabled" = false;
   };
 
   search = {
@@ -63,7 +89,7 @@ in
         inherit search;
 
         settings = settings // {
-          browser.newtabpage.pinned = [
+          "browser.newtabpage.pinned" = [
             {
               title = "YouTube";
               url = "https://www.youtube.com";
@@ -437,7 +463,7 @@ in
         id = 1;
 
         settings = settings // {
-          sidebar.verticalTabs = true;
+          "sidebar.verticalTabs" = true;
 
           browser.newtabpage = {
             activity-stream.feeds.section.topstories = false;

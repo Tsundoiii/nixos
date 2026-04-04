@@ -2,7 +2,7 @@
   imports = [
     ./firefox.nix
     ./hyfetch.nix
-    ./password-store.nix
+    ./password-store-browserpass.nix
     ./starship.nix
   ];
 

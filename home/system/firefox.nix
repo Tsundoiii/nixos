@@ -23,6 +23,7 @@ let
 
     "browser.privatebrowsing.autostart" = true;
     "browser.urlbar.suggest.history" = false;
+    "browser.translations.automaticallyPopup" = false;
     "browser.aboutConfig.showWarning" = false;
 
     "browser.screenshots.folderList" = 2;
@@ -36,20 +37,18 @@ let
       currentVersion = 23;
       newElementCount = 0;
 
-      placements = {
-        nav-bar = [
-          "back-button"
-          "forward-button"
-          "stop-reload-button"
-          "developer-button"
-          "downloads-button"
-          "urlbar-container"
-          "browserpass_maximbaz_com-browser-action"
-          "ublock0_raymondhill_net-browser-action"
-          "_${zhongwen}_-browser-action"
-          "_${tenten}_-browser-action"
-        ];
-      };
+      placements.nav-bar = [
+        "back-button"
+        "forward-button"
+        "stop-reload-button"
+        "developer-button"
+        "downloads-button"
+        "urlbar-container"
+        "browserpass_maximbaz_com-browser-action"
+        "ublock0_raymondhill_net-browser-action"
+        "_${zhongwen}_-browser-action"
+        "_${tenten}_-browser-action"
+      ];
     };
 
     "signon.rememberSignons" = false;

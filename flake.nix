@@ -1,5 +1,5 @@
 {
-  description = "NixOS flake for configuring desktop and laptop.";
+  description = "NixOS configuration for desktop and laptop.";
 
   inputs = {
     nixpkgs.url = "nixpkgs";
@@ -25,7 +25,6 @@
     let
       modules = [
         ./configuration.nix
-
         stylix.nixosModules.stylix
 
         home-manager.nixosModules.home-manager

@@ -1,6 +1,38 @@
 { pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
+  networking.networkmanager.enable = true;
+  time.timeZone = "America/Indiana/Indianapolis";
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
+  fileSystems = {
+    "/".options = [ "compress=zstd" ];
+    "/home".options = [ "compress=zstd" ];
+    "/swap".options = [ "noatime" ];
+
+    "/nix".options = [
+      "compress=zstd"
+      "noatime"
+    ];
+  };
+
+  swapDevices = [
+    {
+      device = "/swap/swapfile";
+      size = 8 * 1024;
+    }
+  ];
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
   system = {
     stateVersion = "26.05";
 
@@ -12,13 +44,6 @@
       flags = [ "--recreate-lock-file" ];
     };
   };
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  nixpkgs.config.allowUnfree = true;
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
@@ -33,36 +58,42 @@
     };
   };
 
-  fileSystems = {
-    "/".options = [ "compress=zstd" ];
-
-    "/home".options = [ "compress=zstd" ];
-
-    "/nix".options = [
-      "compress=zstd"
-      "noatime"
-    ];
-
-    "/swap".options = [ "noatime" ];
+  security = {
+    rtkit.enable = true;
+    sudo.extraConfig = "Defaults pwfeedback";
   };
 
-  swapDevices = [
-    {
-      device = "/swap/swapfile";
-      size = 8 * 1024;
-    }
-  ];
+  services = {
+    fwupd.enable = true;
+    gvfs.enable = true;
+    usbmuxd.enable = true;
+    blueman.enable = true;
+    displayManager.gdm.enable = true;
 
-  hardware = {
-    graphics.enable = true;
-
-    bluetooth = {
+    btrfs.autoScrub = {
       enable = true;
-      powerOnBoot = true;
+      fileSystems = [ "/" ];
+    };
+
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
+
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+    };
+
+    printing = {
+      enable = true;
+
+      drivers = with pkgs; [
+        cups-filters
+        cups-browsed
+      ];
     };
   };
-
-  time.timeZone = "America/Indiana/Indianapolis";
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -90,71 +121,10 @@
     };
   };
 
-  services = {
-    fwupd.enable = true;
-    gvfs.enable = true;
-    usbmuxd.enable = true;
-    blueman.enable = true;
-
-    btrfs.autoScrub = {
-      enable = true;
-      fileSystems = [ "/" ];
-    };
-
-    xserver = {
-      enable = true;
-
-      xkb = {
-        layout = "us";
-        variant = "";
-      };
-    };
-
-    # greetd = {
-    #   enable = true;
-    #   settings = rec {
-    #     initial_session = {
-    #       command = "${pkgs.hyprland}/bin/start-hyprland";
-    #       user = "tsundoiii";
-    #     };
-
-    #     default_session = initial_session;
-    #   };
-    # };
-
-    displayManager.gdm.enable = true;
-
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
-
-    printing = {
-      enable = true;
-
-      drivers = with pkgs; [
-        cups-filters
-        cups-browsed
-      ];
-    };
-  };
-
-  networking.networkmanager.enable = true;
-
-  security = {
-    rtkit.enable = true;
-
-    sudo.extraConfig = "Defaults pwfeedback";
-  };
-
   programs = {
     niri.enable = true;
-
-    gnupg.agent.enable = true;
-
     steam.enable = true;
+    gnupg.agent.enable = true;
 
     git = {
       enable = true;
@@ -207,11 +177,9 @@
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
 
-    fonts = {
-      monospace = {
-        package = pkgs.nerd-fonts.dejavu-sans-mono;
-        name = "DejaVuSansM Nerd Font Mono";
-      };
+    fonts.monospace = {
+      package = pkgs.nerd-fonts.dejavu-sans-mono;
+      name = "DejaVuSansM Nerd Font Mono";
     };
   };
 }

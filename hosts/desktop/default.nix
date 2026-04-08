@@ -4,7 +4,6 @@
   imports = [ ./hardware-configuration.nix ];
 
   networking.hostName = "desktop";
-
   environment.systemPackages = [ pkgs.simple-scan ];
 
   hardware = {
@@ -31,7 +30,6 @@
 
   services = {
     xserver.videoDrivers = [ "modesetting" ];
-
     printing.drivers = [ pkgs.hplipWithPlugin ];
   };
 }

@@ -8,16 +8,16 @@
   ];
 
   programs.home-manager.enable = true;
+  stylix.targets.fuzzel.fonts.enable = false;
 
   home = rec {
     stateVersion = "26.05";
     username = "tsundoiii";
     homeDirectory = "/home/${username}";
+
     packages = with pkgs; [
       nautilus
       kdePackages.filelight
-      mpv
-      qimgv
       libqalculate
       discord
 
@@ -30,6 +30,4 @@
       blahaj
     ];
   };
-
-  stylix.targets.fuzzel.fonts.enable = false;
 }

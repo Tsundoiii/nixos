@@ -26,6 +26,7 @@
 
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nixd";
+
         "nix.hiddenLanguageServerErrors" = [
           "textDocument/definition"
           "textDocument/formatting"
@@ -40,23 +41,22 @@
         };
       };
 
-      extensions = (
-        with pkgs.vscode-extensions;
-        [
-          ms-vscode-remote.remote-ssh
+      extensions = with pkgs.vscode-marketplace; [
+        ms-vscode-remote.remote-ssh
+        ms-vscode.vscode-serial-monitor
 
-          mkhl.direnv
-          usernamehw.errorlens
+        mkhl.direnv
+        usernamehw.errorlens
 
-          jnoortheen.nix-ide
-          ms-python.python
-          ms-python.black-formatter
-          rust-lang.rust-analyzer
-          ms-vscode.cpptools
-
-          mechatroner.rainbow-csv
-        ]
-      );
+        jnoortheen.nix-ide
+        ms-python.python
+        ms-python.black-formatter
+        rust-lang.rust-analyzer
+        ms-vscode.cpptools-extension-pack
+        #theqtcompany.qt-core
+        #theqtcompany.qt-qml
+        mechatroner.rainbow-csv
+      ];
     };
   };
 }

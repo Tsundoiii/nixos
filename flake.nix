@@ -13,6 +13,11 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -20,9 +25,12 @@
       nixpkgs,
       home-manager,
       stylix,
+      nix-vscode-extensions,
       ...
     }:
     let
+      specialArgs = { inherit nix-vscode-extensions; };
+
       modules = [
         ./configuration.nix
         stylix.nixosModules.stylix
@@ -36,16 +44,18 @@
           };
         }
       ];
+
+      system =
+        hostConfiguration:
+        nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          modules = modules ++ [ hostConfiguration ];
+        };
     in
     {
       nixosConfigurations = {
-        desktop = nixpkgs.lib.nixosSystem {
-          modules = modules ++ [ ./hosts/desktop ];
-        };
-
-        laptop = nixpkgs.lib.nixosSystem {
-          modules = modules ++ [ ./hosts/laptop ];
-        };
+        desktop = system ./hosts/desktop;
+        laptop = system ./hosts/laptop;
       };
     };
 }

@@ -1,7 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, nix-vscode-extensions, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true;
   networking.networkmanager.enable = true;
   time.timeZone = "America/Indiana/Indianapolis";
 
@@ -9,6 +8,11 @@
     "nix-command"
     "flakes"
   ];
+
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [ nix-vscode-extensions.overlays.default ];
+  };
 
   fileSystems = {
     "/".options = [ "compress=zstd" ];

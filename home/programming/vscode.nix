@@ -53,8 +53,8 @@
         ms-python.black-formatter
         rust-lang.rust-analyzer
         ms-vscode.cpptools-extension-pack
-        #theqtcompany.qt-core
-        #theqtcompany.qt-qml
+        theqtcompany.qt-core
+        theqtcompany.qt-qml
         mechatroner.rainbow-csv
       ];
     };

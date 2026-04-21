@@ -2,7 +2,6 @@
   imports = [ ./hardware-configuration.nix ];
 
   networking.hostName = "laptop";
-  boot.loader.timeout = 2;
 
   services = {
     fprintd.enable = true;

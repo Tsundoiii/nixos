@@ -4,14 +4,18 @@
   networking.networkmanager.enable = true;
   time.timeZone = "America/Indiana/Indianapolis";
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings = {
+    warn-dirty = false;
+
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+  };
 
   nixpkgs = {
-    config.allowUnfree = true;
     overlays = [ nix-vscode-extensions.overlays.default ];
+    config.allowUnfree = true;
   };
 
   fileSystems = {
@@ -53,6 +57,7 @@
     kernelPackages = pkgs.linuxPackages_latest;
 
     loader = {
+      timeout = 2;
       efi.canTouchEfiVariables = true;
 
       systemd-boot = {
@@ -142,13 +147,9 @@
   };
 
   environment = {
-    sessionVariables = {
-      NIXOS_OZONE_WL = "1";
-      NIRI_CONFIG = "/etc/nixos/home/display/config.kdl";
-    };
+    sessionVariables.NIXOS_OZONE_WL = "1";
 
     systemPackages = with pkgs; [
-      xwayland-satellite
       usbutils
       brightnessctl
       libimobiledevice

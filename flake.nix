@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,14 +30,19 @@
       nixpkgs,
       home-manager,
       stylix,
+      niri,
       nix-vscode-extensions,
       ...
     }:
     let
-      specialArgs = { inherit nix-vscode-extensions; };
+      specialArgs = {
+        inherit niri;
+        inherit nix-vscode-extensions;
+      };
 
       modules = [
         ./configuration.nix
+        niri.nixosModules.niri
         stylix.nixosModules.stylix
 
         home-manager.nixosModules.home-manager
@@ -49,6 +59,7 @@
         hostConfiguration:
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
+
           modules = modules ++ [ hostConfiguration ];
         };
     in

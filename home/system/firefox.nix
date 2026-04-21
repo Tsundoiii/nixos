@@ -464,52 +464,60 @@ in
 
         settings = settings // {
           "sidebar.verticalTabs" = true;
+          "browser.newtabpage.activity-stream.topSitesRows" = 2;
+          "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
 
-          browser.newtabpage = {
-            activity-stream.feeds.section.topstories = false;
+          "browser.newtabpage.pinned" = [
+            {
+              title = "myPurdue";
+              url = "https://mypurdue.purdue.edu";
+            }
 
-            pinned = [
-              {
-                title = "myPurdue";
-                url = "https://mypurdue.purdue.edu";
-              }
+            {
+              title = "Brightspace";
+              url = "https://purdue.brightspace.com";
+            }
 
-              {
-                title = "Brightspace";
-                url = "https://purdue.brightspace.com";
-              }
+            {
+              title = "Gradescope";
+              url = "https://www.gradescope.com";
+            }
 
-              {
-                title = "Gradescope";
-                url = "https://www.gradescope.com";
-              }
+            {
+              title = "MyLab & Mastering";
+              url = "https://mylab.pearson.com";
+            }
 
-              {
-                title = "MyLab & Mastering";
-                url = "https://mylab.pearson.com";
-              }
+            {
+              title = "Outlook";
+              url = "https://outlook.office365.com";
+            }
 
-              {
-                title = "Outlook";
-                url = "https://outlook.office365.com";
-              }
+            {
+              title = "OneDrive";
+              url = "https://purdue0-my.sharepoint.com/";
+            }
 
-              {
-                title = "OneDrive";
-                url = "https://purdue0-my.sharepoint.com/";
-              }
+            {
+              title = "Word";
+              url = "https://word.microsoft.cloud";
+            }
 
-              {
-                title = "Word";
-                url = "https://word.microsoft.cloud";
-              }
+            {
+              title = "PaperCut";
+              url = "https://wpvapppcprt01.itap.purdue.edu:9192/user";
+            }
 
-              {
-                title = "PaperCut";
-                url = "https://wpvapppcprt01.itap.purdue.edu:9192/user";
-              }
-            ];
-          };
+            {
+              title = "Fix It Portal";
+              url = "https://www.purdue.edu/fix-it";
+            }
+
+            {
+              title = "BoilerTV";
+              url = "https://housing.purdue.edu/BTV";
+            }
+          ];
         };
       };
     };

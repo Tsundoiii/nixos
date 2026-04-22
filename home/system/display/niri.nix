@@ -2,6 +2,23 @@
 
 {
   programs.niri.settings = {
+    prefer-no-csd = true;
+    screenshot-path = "~/Pictures/Screenshots/Screenshot %Y-%m-%d %H-%M-%S.png";
+    hotkey-overlay.skip-at-startup = true;
+
+    spawn-at-startup = [
+      { argv = [ "firefox" ]; }
+
+      {
+        argv = [
+          "ibus"
+          "start"
+          "--type"
+          "wayland"
+        ];
+      }
+    ];
+
     input = {
       keyboard.numlock = true;
       warp-mouse-to-focus.enable = true;
@@ -207,6 +224,7 @@
     layout = {
       gaps = 15;
       default-column-width.proportion = 1.0;
+      focus-ring.width = 2;
 
       preset-column-widths = [
         { proportion = 0.5; }
@@ -217,22 +235,18 @@
         { proportion = 0.5; }
         { proportion = 1.0; }
       ];
-
-      focus-ring = {
-        width = 2;
-      };
     };
 
     window-rules = [
       {
+        clip-to-geometry = true;
+
         geometry-corner-radius = {
           top-left = 12.0;
           top-right = 12.0;
           bottom-left = 12.0;
           bottom-right = 12.0;
         };
-
-        clip-to-geometry = true;
       }
 
       {
@@ -255,24 +269,5 @@
         };
       }
     ];
-
-    prefer-no-csd = true;
-
-    spawn-at-startup = [
-      { argv = [ "firefox" ]; }
-
-      {
-        argv = [
-          "ibus"
-          "start"
-          "--type"
-          "wayland"
-        ];
-      }
-    ];
-
-    hotkey-overlay.skip-at-startup = true;
-
-    screenshot-path = "~/Pictures/Screenshots/Screenshot %Y-%m-%d %H-%M-%S.png";
   };
 }

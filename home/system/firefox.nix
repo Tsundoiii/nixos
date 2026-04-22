@@ -14,11 +14,8 @@ let
 
   settings = {
     "identity.fxaccounts.enabled" = false;
-
     "toolbars.bookmarks.visibility" = false;
-
     "devtools.toolbox.host" = "right";
-
     "extensions.autoDisableScopes" = 0;
 
     "browser.privatebrowsing.autostart" = true;
@@ -29,9 +26,11 @@ let
     "browser.screenshots.folderList" = 2;
     "browser.screenshots.dir" = "${config.home.homeDirectory}/Pictures/Screenshots";
 
+    "browser.newtabpage.activity-stream.showSearch" = false;
+    "browser.newtabpage.activity-stream.showWeather" = false;
     "browser.newtabpage.activity-stream.showSponsored" = false;
     "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
-    "browser.newtabpage.activity-stream.system.showWeather" = false;
+    "browser.newtabpage.activity-stream.default.sites" = "";
 
     "browser.uiCustomization.state" = {
       currentVersion = 23;
@@ -58,8 +57,8 @@ let
   };
 
   search = {
-    default = "ddg";
     force = true;
+    default = "ddg";
   };
 in
 {

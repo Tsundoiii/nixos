@@ -53,6 +53,8 @@
         ms-python.black-formatter
         rust-lang.rust-analyzer
         ms-vscode.cpptools-extension-pack
+        ms-vscode.cpptools
+        ms-vscode.cmake-tools
 
         theqtcompany.qt-core
         theqtcompany.qt-qml

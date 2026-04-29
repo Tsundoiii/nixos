@@ -7,6 +7,7 @@
     profiles.default = {
       userSettings = {
         "workbench.secondarySideBar.defaultVisibility" = "hidden";
+        "terminal.integrated.initialHint" = false;
         "files.autoSave" = "onFocusChange";
         "explorer.confirmDragAndDrop" = false;
         "telemetry.telemetryLevel" = "error";

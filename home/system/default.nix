@@ -14,6 +14,7 @@
   programs = {
     bash.enable = true;
     alacritty.enable = true;
+    obs-studio.enable = true;
     discord.enable = true;
     prismlauncher.enable = true;
   };

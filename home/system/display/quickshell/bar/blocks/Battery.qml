@@ -7,7 +7,7 @@ Block {
     property int percent: Math.round(UPower.displayDevice.percentage * 100)
 
     visible: UPower.displayDevice.isLaptopBattery
-    color: UPower.onBattery ? (percent < 20 ? (percent < 10 ? theme.red : theme.yellow) : theme.green) : theme.disabled(theme.green)
+    color: UPower.onBattery ? (percent <= 20 ? (percent <= 10 ? theme.red : theme.yellow) : theme.green) : theme.disabled(theme.green)
     
     SystemText {
         property var symbols: {

@@ -52,7 +52,7 @@ Scope {
 
                     Audio {}
 
-                    Power {}
+                    Battery {}
                 }
             }
         }

@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./media
     ./programming
     ./system
   ];

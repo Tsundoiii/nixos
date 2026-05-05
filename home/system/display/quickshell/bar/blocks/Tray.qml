@@ -13,7 +13,7 @@ RowLayout {
 
             property int blockHeight: bar.height - 2 * margin
             
-            color: theme.orange
+            color: theme.yellow
             Layout.preferredWidth: blockHeight
             Layout.preferredHeight: blockHeight
 

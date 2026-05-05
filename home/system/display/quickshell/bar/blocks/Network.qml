@@ -5,7 +5,7 @@ import Quickshell.Io
 import "../../utils"
 
 Block {
-    color: NetworkInformation.reachability === NetworkInformation.Reachability.Online ? theme.blue : theme.disabled(theme.blue)
+    color: NetworkInformation.reachability === NetworkInformation.Reachability.Online ? theme.orange : theme.disabled(theme.orange)
 
     SystemText {
         property string network

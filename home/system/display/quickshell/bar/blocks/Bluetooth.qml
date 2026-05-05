@@ -5,7 +5,7 @@ import "../../utils"
 
 Block {
     visible: Bluetooth.devices.values.some(device => device.connected)
-    color: theme.yellow
+    color: theme.red
 
     SystemText {
         property var batterySymbols: {

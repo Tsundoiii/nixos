@@ -39,6 +39,8 @@ Scope {
 
                     Tray {}
 
+                    Network {}
+
                     Bluetooth {}
                 }
 
@@ -47,8 +49,6 @@ Scope {
                     Layout.rightMargin: 5
 
                     Hardware {}
-
-                    Network {}
 
                     Audio {}
 

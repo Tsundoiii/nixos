@@ -4,7 +4,7 @@ import Quickshell.Io
 import "../../utils"
 
 Block {
-    color: theme.purple
+    color: theme.blue
 
     SystemText {
         property int cpu

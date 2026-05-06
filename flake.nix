@@ -39,7 +39,7 @@
       };
 
       modules = [
-        ./configuration.nix
+        ./system
         niri.nixosModules.niri
         stylix.nixosModules.stylix
 

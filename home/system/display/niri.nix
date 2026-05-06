@@ -215,10 +215,16 @@
       ];
     }
     // lib.mergeAttrsList (
-      builtins.genList (i: {
-        "Mod+${toString (i + 1)}".action.focus-workspace = i + 1;
-        "Mod+Ctrl+${toString (i + 1)}".action.move-column-to-workspace = i + 1;
-      }) 9
+      builtins.genList (
+        i:
+        let
+          workspace = i + 1;
+        in
+        {
+          "Mod+${toString workspace}".action.focus-workspace = workspace;
+          "Mod+Ctrl+${toString workspace}".action.move-column-to-workspace = workspace;
+        }
+      ) 9
     );
 
     layout = {

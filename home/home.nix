@@ -18,10 +18,12 @@
       nautilus
       kdePackages.filelight
 
-      typst
-
       nixd
       nixfmt
+
+      typst
+
+      kicad
 
       blahaj
     ];

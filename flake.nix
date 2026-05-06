@@ -58,13 +58,17 @@
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
 
-          modules = modules ++ [ hostConfiguration ];
+          modules = modules ++ hostConfiguration;
         };
     in
     {
       nixosConfigurations = {
-        desktop = system ./hosts/desktop ++ nixos-hardware.nixosModules.lenovo-thinkpad-t495;
-        laptop = system ./hosts/laptop;
+        desktop = system [ ./hosts/desktop ];
+
+        laptop = system [
+          ./hosts/laptop
+          nixos-hardware.nixosModules.lenovo-thinkpad-t495
+        ];
       };
     };
 }

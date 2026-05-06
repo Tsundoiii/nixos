@@ -5,6 +5,6 @@ import "../../utils"
 
 Block {
     SystemText {
-        text: Qt.formatDateTime(clock.date, "ddd • MMM d • hh:mm t")
+        text: Qt.formatDateTime(clock.date, "ddd • MMM d • h:mm t")
     }
 }

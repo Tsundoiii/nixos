@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Widgets
+
 import "blocks"
 import "../utils"
 
@@ -27,33 +28,32 @@ Scope {
                 right: true
             }
 
+            RowLayout {
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                
+                anchors.leftMargin: 5
+
+                Tray {}
+
+                Network {}
+            }
+
             Time {
                 anchors.centerIn: parent
             }
 
             RowLayout {
-                anchors.fill: parent
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
 
-                RowLayout {
-                    Layout.leftMargin: 5
+                anchors.rightMargin: 5
 
-                    Tray {}
+                Hardware {}
 
-                    Network {}
+                Audio {}
 
-                    Bluetooth {}
-                }
-
-                RowLayout {
-                    Layout.alignment: Qt.AlignRight
-                    Layout.rightMargin: 5
-
-                    Hardware {}
-
-                    Audio {}
-
-                    Battery {}
-                }
+                Battery {}
             }
         }
     }

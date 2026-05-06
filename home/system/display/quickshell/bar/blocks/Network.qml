@@ -1,65 +1,55 @@
-import QtNetwork
 import QtQuick
 import Quickshell.Io
+import Quickshell.Networking
 
 import "../../utils"
 
 Block {
-    color: NetworkInformation.reachability === NetworkInformation.Reachability.Online ? theme.orange : theme.disabled(theme.orange)
+    color: Networking.connectivity === NetworkConnectivity.Full ? theme.yellow : theme.disabled(theme.yellow)
 
     SystemText {
-        property string network
+        property NetworkDevice device
 
         id: name
         text: `${symbol()} ${text()}`
 
         function symbol() {
-            var symbol
+            for (const device of Networking.devices.values) {
+                if (device.connected) {
+                    this.device = device
 
-            switch (NetworkInformation.transportMedium) {
-                case NetworkInformation.TransportMedium.Ethernet:
-                    symbol = "󰈁"
-                    break
-                case NetworkInformation.TransportMedium.WiFi:
-                    symbol = "󰖩"
-                    break
-                default:
-                    symbol = ""
+                    if (device.type === DeviceType.Wired) {
+                        return "󰈁"
+                    } else {
+                        return "󰖩"
+                    }
+                }
             }
 
-            return symbol
+            return ""
         }
 
         function text() {
-            var text
+            let text = ""
 
-            switch (NetworkInformation.reachability) {
-                case NetworkInformation.Reachability.Online:
-                case NetworkInformation.Reachability.Site:
-                case NetworkInformation.Reachability.Local:
-                    text = network
+            switch (Networking.connectivity) {
+                case NetworkConnectivity.None:
+                    return "(No Network)"
+                case NetworkConnectivity.Unknown:
+                    return "(Unknown)"
+                case NetworkConnectivity.Portal:
+                    text += " (Portal)"
                     break
-                default:
-                    text = "(No Network)"
+                case NetworkConnectivity.Limited:
+                    text += " (Limited)"
+                    break
             }
 
-            return text
-        }
-
-        Process {
-            id: getNetwork
-            command: ["sh", "-c", "nmcli -t -f NAME c show --active | head -n 1 | head -c -1"]
-            running: true
-            stdout: StdioCollector {
-                onStreamFinished: name.network = text
+            for (const network of device.networks.values) {
+                if (network.connected) {
+                    return network.name + text
+                }
             }
-        }
-
-        Timer {
-            interval: 1000
-            running: true
-            repeat: true
-            onTriggered: getNetwork.running = true
         }
     }
 }

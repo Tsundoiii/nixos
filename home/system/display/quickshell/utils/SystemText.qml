@@ -8,7 +8,6 @@ Text {
     
     font: {
         "family": "DejaVuSansM Nerd Font Mono",
-        "bold": true,
-        "pixelSize": parent.height / 2
+        "bold": true
     }
 }

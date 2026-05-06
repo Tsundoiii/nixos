@@ -20,8 +20,7 @@ Scope {
             implicitHeight: modelData.height
 
             id: background
-            visible: true
-            color: theme.bg5
+            color: "transparent"
 
             Image {
                 anchors.fill: parent
@@ -48,7 +47,7 @@ Scope {
 
                 function getAPOD(callback) {
                     const xhr = new XMLHttpRequest()
-                    let url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&thumbs=True"
+                    let url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
 
                     if (modelData.name === "HDMI-1") {
                         const now = new Date();

@@ -3,13 +3,13 @@
 let
   browserpass = "browserpass@maximbaz.com";
   ublock = "uBlock0@raymondhill.net";
-  zhongwen = "59812185-ea92-4cca-8ab7-cfcacee81281";
-  tenten = "dedb3663-6f13-4c6c-bf0f-5bd111cb2c79";
+  zhongwen = "{dedb3663-6f13-4c6c-bf0f-5bd111cb2c79}";
+  tenten = "{59812185-ea92-4cca-8ab7-cfcacee81281}";
 
   extension = id: {
     installation_mode = "force_installed";
     private_browsing = true;
-    install_url = "https://addons.mozilla.org/firefox/downloads/latest/{${id}}/latest.xpi";
+    install_url = "https://addons.mozilla.org/firefox/downloads/latest/${id}/latest.xpi";
   };
 
   settings = {

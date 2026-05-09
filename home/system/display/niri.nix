@@ -118,6 +118,11 @@
         "open"
       ];
 
+      "XF86HomePage".action.spawn = [
+        "vicinae"
+        "open"
+      ];
+
       "Mod+Left".action.focus-column-left = [ ];
       "Mod+Right".action.focus-column-right = [ ];
       "Mod+Up".action.focus-window-or-workspace-up = [ ];

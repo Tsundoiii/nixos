@@ -3,12 +3,11 @@
     ./display
     ./firefox.nix
     ./hyfetch.nix
+    ./mako.nix
     ./password-store-browserpass.nix
     ./starship.nix
     ./vicinae.nix
   ];
-
-  services.mako.enable = true;
 
   programs = {
     bash.enable = true;

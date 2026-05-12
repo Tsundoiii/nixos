@@ -18,6 +18,8 @@
       nautilus
       kdePackages.filelight
 
+      devenv
+
       nixd
       nixfmt
 

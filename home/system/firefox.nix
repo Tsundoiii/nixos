@@ -12,6 +12,8 @@ let
     install_url = "https://addons.mozilla.org/firefox/downloads/latest/${id}/latest.xpi";
   };
 
+  normalizedId = id: builtins.substring 1 ((builtins.stringLength id) - 2) id;
+
   settings = {
     "identity.fxaccounts.enabled" = false;
     "toolbars.bookmarks.visibility" = false;
@@ -45,8 +47,8 @@ let
         "urlbar-container"
         "browserpass_maximbaz_com-browser-action"
         "ublock0_raymondhill_net-browser-action"
-        "_${zhongwen}_-browser-action"
-        "_${tenten}_-browser-action"
+        "_${normalizedId zhongwen}_-browser-action"
+        "_${normalizedId tenten}_-browser-action"
       ];
     };
 

@@ -5,7 +5,20 @@ import "utils"
 
 ShellRoot {
     readonly property var theme: SystemTheme.theme
-    
-    Background {}
-    Bar {}
+
+    Variants {
+        model: Quickshell.screens
+
+        Scope {
+            required property ShellScreen modelData
+
+            Background {
+                monitor: modelData
+            }
+            
+            Bar {
+                screen: modelData
+            }
+        }
+    }
 }

@@ -2,6 +2,7 @@
   imports = [
     ./display
     ./firefox.nix
+    ./ghostty.nix
     ./hyfetch.nix
     ./mako.nix
     ./password-store-browserpass.nix
@@ -9,8 +10,5 @@
     ./vicinae.nix
   ];
 
-  programs = {
-    bash.enable = true;
-    alacritty.enable = true;
-  };
+  programs.bash.enable = true;
 }

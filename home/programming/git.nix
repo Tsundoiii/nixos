@@ -12,7 +12,6 @@
 
     settings = {
       init.defaultBranch = "main";
-
       push.autoSetupRemote = true;
 
       user = {

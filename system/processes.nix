@@ -8,6 +8,8 @@
     gvfs.enable = true;
     usbmuxd.enable = true;
     blueman.enable = true;
+    automatic-timezoned.enable = true;
+    xserver.enable = true;
     displayManager.gdm.enable = true;
 
     btrfs.autoScrub = {

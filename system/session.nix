@@ -2,13 +2,12 @@
 
 {
   environment = {
-    sessionVariables.NIXOS_OZONE_WL = "1";
-
     systemPackages = with pkgs; [
       usbutils
       brightnessctl
       libimobiledevice
       ifuse
+      xwayland-satellite
     ];
   };
 

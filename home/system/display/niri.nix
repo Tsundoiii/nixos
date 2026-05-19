@@ -21,13 +21,7 @@
       ];
 
       input = {
-        keyboard.numlock = true;
         warp-mouse-to-focus.enable = true;
-
-        touchpad = {
-          tap = true;
-          natural-scroll = true;
-        };
 
         focus-follows-mouse = {
           enable = true;
@@ -36,8 +30,10 @@
       };
 
       binds = {
+        "Ctrl+Alt+Delete".action.quit = [ ];
+
         "Print".action.screenshot = [ ];
-        "Ctrl+Print".action.screenshot-screen = [ ];
+        "Shift+Print".action.screenshot-screen = [ ];
         "Alt+Print".action.screenshot-window = [ ];
 
         "XF86AudioRaiseVolume" = {
@@ -55,6 +51,7 @@
 
         "XF86AudioLowerVolume" = {
           allow-when-locked = true;
+
           action.spawn = [
             "wpctl"
             "set-volume"
@@ -85,44 +82,25 @@
           ];
         };
 
-        "XF86MonBrightnessUp" = {
-          allow-when-locked = true;
-
-          action.spawn = [
-            "brightnessctl"
-            "--class=backlight"
-            "set"
-            "+5%"
-          ];
-        };
-        "XF86MonBrightnessDown" = {
-          allow-when-locked = true;
-
-          action.spawn = [
-            "brightnessctl"
-            "--class=backlight"
-            "set"
-            "5%-"
-          ];
+        "Mod+Delete" = {
+          allow-inhibiting = false;
+          action.toggle-keyboard-shortcuts-inhibit = [ ];
         };
 
-        "XF86Explorer".action.spawn = [ "firefox" ];
-        "XF86Bluetooth".action.spawn = [ "blueman-manager" ];
+        "Mod+grave" = {
+          repeat = false;
+          action.toggle-overview = [ ];
+        };
 
-        "XF86Tools".action.spawn = [
-          "code"
-          "/etc/nixos"
-        ];
+        "Mod+Escape" = {
+          repeat = false;
+          action.close-window = [ ];
+        };
 
-        "XF86Favorites".action.spawn = [
-          "vicinae"
-          "open"
-        ];
+        "Mod+Slash".action.show-hotkey-overlay = [ ];
 
-        "XF86HomePage".action.spawn = [
-          "vicinae"
-          "open"
-        ];
+        "Mod+XF86WakeUp".action.toggle-window-floating = [ ];
+        "Mod+Alt+XF86WakeUp".action.switch-focus-between-floating-and-tiling = [ ];
 
         "Mod+Left".action.focus-column-left = [ ];
         "Mod+Right".action.focus-column-right = [ ];
@@ -173,7 +151,7 @@
 
         "Mod+Tab".action.focus-workspace-previous = [ ];
 
-        "Mod+W".action.toggle-column-tabbed-display = [ ];
+        "Mod+Insert".action.toggle-column-tabbed-display = [ ];
 
         "Mod+BracketLeft".action.consume-or-expel-window-left = [ ];
         "Mod+BracketRight".action.consume-or-expel-window-right = [ ];
@@ -181,44 +159,15 @@
         "Mod+Comma".action.consume-window-into-column = [ ];
         "Mod+Period".action.expel-window-from-column = [ ];
 
-        "Mod+R".action.switch-preset-column-width = [ ];
-        "Mod+Shift+R".action.switch-preset-window-height = [ ];
-        "Mod+F".action.maximize-column = [ ];
-        "Mod+C".action.center-column = [ ];
+        "Mod+Caps_Lock".action.switch-preset-column-width = [ ];
+        "Mod+Alt+Caps_Lock".action.switch-preset-window-height = [ ];
+        "Mod+Ctrl+Caps_Lock".action.center-column = [ ];
+        "Mod+Shift+Caps_Lock".action.maximize-column = [ ];
 
         "Mod+Minus".action.set-column-width = "-10%";
         "Mod+Equal".action.set-column-width = "+10%";
-        "Mod+Shift+Minus".action.set-window-height = "-10%";
-        "Mod+Shift+Equal".action.set-window-height = "+10%";
-
-        "Mod+V".action.toggle-window-floating = [ ];
-        "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = [ ];
-
-        "Mod+Escape" = {
-          allow-inhibiting = false;
-          action.toggle-keyboard-shortcuts-inhibit = [ ];
-        };
-
-        "Mod+O" = {
-          repeat = false;
-          action.toggle-overview = [ ];
-        };
-
-        "Mod+Q" = {
-          repeat = false;
-          action.close-window = [ ];
-        };
-
-        "Mod+Shift+Slash".action.show-hotkey-overlay = [ ];
-        "Ctrl+Alt+Delete".action.quit = [ ];
-
-        "Mod+T".action.spawn = [ "ghostty" ];
-
-        "Mod+P".action.spawn = [
-          "firefox"
-          "-p"
-          "school"
-        ];
+        "Mod+Alt+Minus".action.set-window-height = "-10%";
+        "Mod+Alt+Equal".action.set-window-height = "+10%";
       }
       // lib.mergeAttrsList (
         builtins.genList (

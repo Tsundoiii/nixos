@@ -32,4 +32,23 @@
     xserver.videoDrivers = [ "modesetting" ];
     printing.drivers = [ pkgs.hplipWithPlugin ];
   };
+
+  home-manager.users.tsundoiii.programs.niri.settings = {
+    input.keyboard.numlock = true;
+
+    binds = {
+      "XF86Explorer".action.spawn = [ "firefox" ];
+
+      "Alt+XF86Explorer".action.spawn = [
+        "firefox"
+        "-p"
+        "school"
+      ];
+
+      "XF86HomePage".action.spawn = [
+        "vicinae"
+        "open"
+      ];
+    };
+  };
 }

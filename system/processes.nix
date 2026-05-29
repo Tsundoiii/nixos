@@ -42,6 +42,11 @@
     steam.enable = true;
     gnupg.agent.enable = true;
 
+    nh = {
+      enable = true;
+      clean.enable = true;
+    };
+
     git = {
       enable = true;
       config.safe.directory = "/etc/nixos";

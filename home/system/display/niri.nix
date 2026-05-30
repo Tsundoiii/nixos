@@ -9,15 +9,6 @@
 
       spawn-at-startup = [
         { argv = [ "firefox" ]; }
-
-        {
-          argv = [
-            "ibus"
-            "start"
-            "--type"
-            "wayland"
-          ];
-        }
       ];
 
       input = {

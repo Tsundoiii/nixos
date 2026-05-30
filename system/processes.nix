@@ -10,7 +10,6 @@
     blueman.enable = true;
     automatic-timezoned.enable = true;
     xserver.enable = true;
-    displayManager.gdm.enable = true;
 
     btrfs.autoScrub = {
       enable = true;

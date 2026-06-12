@@ -24,9 +24,9 @@
       nixd
       nixfmt
 
-      typst
-
       kicad
+
+      typst
 
       blahaj
     ];

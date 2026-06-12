@@ -1,6 +1,5 @@
 {
   imports = [
-    ./display
     ./firefox.nix
     ./ghostty.nix
     ./hyfetch.nix
@@ -10,5 +9,8 @@
     ./vicinae.nix
   ];
 
-  programs.bash.enable = true;
+  programs = {
+    bash.enable = true;
+    discord.enable = true;
+  };
 }

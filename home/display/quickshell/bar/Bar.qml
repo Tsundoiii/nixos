@@ -28,9 +28,9 @@ PanelWindow {
         
         anchors.leftMargin: 5
 
-        Tray {}
-
         Network {}
+
+        Tray {}
     }
 
     Time {

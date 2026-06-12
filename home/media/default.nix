@@ -1,12 +1,5 @@
 {
-  imports = [
-    ./mpv.nix
-    ./thunderbird.nix
-  ];
+  imports = [ ./mpv.nix ];
 
-  programs = {
-    obs-studio.enable = true;
-    discord.enable = true;
-    prismlauncher.enable = true;
-  };
+  programs.prismlauncher.enable = true;
 }

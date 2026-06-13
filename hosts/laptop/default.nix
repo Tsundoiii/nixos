@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   imports = [ ./hardware-configuration.nix ];
 
@@ -20,10 +18,6 @@
     };
 
     resolved.enable = true;
-    mullvad-vpn = {
-      enable = true;
-      package = pkgs.mullvad-vpn;
-    };
   };
 
   home-manager.users.tsundoiii.programs.niri.settings = {

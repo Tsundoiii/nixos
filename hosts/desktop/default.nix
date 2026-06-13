@@ -37,6 +37,7 @@
     input.keyboard.numlock = true;
 
     binds = {
+      "XF86Calculator".action.spawn-sh = [ "LIBGL_ALWAYS_SOFTWARE=1 ghostty" ];
       "XF86Explorer".action.spawn = [ "firefox" ];
 
       "Alt+XF86Explorer".action.spawn = [

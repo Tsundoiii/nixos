@@ -47,7 +47,7 @@
         ms-vscode-remote.remote-ssh
         ms-vscode.vscode-serial-monitor
 
-        mkhl.direnv
+        datakurre.devenv
         usernamehw.errorlens
 
         jnoortheen.nix-ide

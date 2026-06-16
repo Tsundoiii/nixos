@@ -25,6 +25,7 @@
       nixfmt
 
       kicad
+      pineflash
 
       typst
 

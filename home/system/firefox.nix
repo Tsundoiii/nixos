@@ -320,6 +320,11 @@ in
                 }
 
                 {
+                  name = "IEEE Spectrum";
+                  url = "https://spectrum.ieee.org";
+                }
+
+                {
                   name = "h2g2";
                   url = "https://h2g2.com";
                 }

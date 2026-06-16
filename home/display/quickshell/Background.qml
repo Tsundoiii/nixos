@@ -36,7 +36,7 @@ PanelWindow {
             wrapMode: Text.WordWrap
 
             font: {
-                "family": "DejaVuSansM Nerd Font Mono",
+                "family": "FiraCode Nerd Font",
                 "bold": true,
                 "pixelSize": 12
             }

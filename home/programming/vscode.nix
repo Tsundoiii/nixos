@@ -21,6 +21,7 @@
         "editor.formatOnPaste" = true;
         "editor.formatOnType" = true;
         "editor.bracketPairColorization.independentColorPoolPerBracketType" = true;
+        "editor.fontLigatures" = "'ss04'";
 
         "python.analysis.typeCheckingMode" = "strict";
         "qt-qml.qmlls.useQmlImportPathEnvVar" = true;

@@ -7,7 +7,7 @@ Text {
     fontSizeMode: Text.Fit
     
     font: {
-        "family": "DejaVuSansM Nerd Font Mono",
+        "family": "FiraCode Nerd Font",
         "bold": true
     }
 }

@@ -10,7 +10,7 @@ Block {
         property int cpu
         property int mem
         id: t
-        text: `󰍛 ${cpu}%  ${mem}%`
+        text: `󰍛 ${cpu}%    ${mem}%`
 
         Process {
             id: cpuProc

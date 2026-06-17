@@ -8,23 +8,23 @@ Block {
 
     color: sink?.audio?.muted ? theme.disabled(theme.aqua) : theme.aqua
 
-    PwObjectTracker { 
+    PwObjectTracker {
         objects: [sink]
     }
-    
+
     SystemText {
         function symbol(sink: PwNode): string {
             if (sink?.audio?.muted) {
-                return ""
+                return "";
             } else if (sink?.audio?.volume === 0) {
-                return ""
+                return "";
             } else if (sink?.audio?.volume < 0.5) {
-                return ""
+                return "";
             } else {
-                return ""
+                return "";
             }
         }
 
-        text: `${symbol(sink)} ${Math.round(sink?.audio?.volume * 100)}%`
+        text: `${symbol(parent.sink)} ${Math.round(parent.sink?.audio?.volume * 100)}%`
     }
 }

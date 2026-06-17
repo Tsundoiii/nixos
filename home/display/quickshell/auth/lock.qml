@@ -2,7 +2,6 @@ import Quickshell
 import Quickshell.Wayland
 import Quickshell.Services.Pam
 import QtQuick.Controls
-import "auth"
 
 ShellRoot {
     PamContext {
@@ -10,22 +9,22 @@ ShellRoot {
         property string password
 
         function authenticate(password: string) {
-            this.password = password
-            this.start()
+            this.password = password;
+            this.start();
         }
 
         onPamMessage: {
             if (this.responseRequired) {
-                this.respond(password)
+                this.respond(password);
             }
         }
 
         onCompleted: result => {
             if (result === PamResult.Success) {
-                lock.locked = false
-                Qt.quit()
+                lock.locked = false;
+                Qt.quit();
             } else {
-                lock.lockScreen.displayError(PamResult.toString(result))
+                lock.lockScreen.displayError(PamResult.toString(result));
             }
         }
     }
@@ -33,7 +32,7 @@ ShellRoot {
     WlSessionLock {
         id: lock
         locked: true
-        
+
         WlSessionLockSurface {
             LockScreen {
                 id: lockScreen
@@ -42,8 +41,8 @@ ShellRoot {
                 Button {
                     text: "Unlock"
                     onClicked: {
-                        lock.locked = false
-                        Qt.quit()
+                        lock.locked = false;
+                        Qt.quit();
                     }
                 }
             }

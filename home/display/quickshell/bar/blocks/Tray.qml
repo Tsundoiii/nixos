@@ -10,17 +10,16 @@ RowLayout {
 
         Block {
             required property SystemTrayItem modelData
-            
+
             color: theme.orange
 
             RowLayout {
                 Image {
-                    Layout.preferredWidth: bar.height / 2
-                    Layout.preferredHeight: bar.height / 2
-
                     id: icon
                     source: modelData.icon
                     fillMode: Image.PreserveAspectFit
+                    Layout.preferredWidth: bar.height / 2
+                    Layout.preferredHeight: bar.height / 2
                 }
 
                 SystemText {

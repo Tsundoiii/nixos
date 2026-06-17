@@ -24,7 +24,10 @@
         "editor.fontLigatures" = "'ss04'";
 
         "python.analysis.typeCheckingMode" = "strict";
+
+        "qt-qml.qmlls.customExePath" = "${pkgs.kdePackages.qtdeclarative}/bin/qmlls";
         "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
+        "qt-qml.qmlls.customArgs" = [ "-E" ];
 
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nixd";

@@ -1,10 +1,8 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
-import Quickshell.Widgets
 
 import "blocks"
-import "../utils"
 
 PanelWindow {
     id: bar
@@ -25,7 +23,7 @@ PanelWindow {
     RowLayout {
         anchors.left: parent.left
         anchors.verticalCenter: parent.verticalCenter
-        
+
         anchors.leftMargin: 5
 
         Network {}

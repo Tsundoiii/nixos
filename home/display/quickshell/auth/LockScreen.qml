@@ -1,5 +1,4 @@
 import Quickshell.Wayland
-import Quickshell.Widgets
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
@@ -39,6 +38,6 @@ Rectangle {
     }
 
     function displayError(error) {
-        errorText = `Error: ${error}`
+        errorText = `Error: ${error}`;
     }
 }

@@ -21,7 +21,7 @@
         "editor.formatOnPaste" = true;
         "editor.formatOnType" = true;
         "editor.bracketPairColorization.independentColorPoolPerBracketType" = true;
-        "editor.fontLigatures" = "'ss04'";
+        "editor.fontLigatures" = "'calt' 0, 'ss04'";
 
         "python.analysis.typeCheckingMode" = "strict";
 

@@ -16,6 +16,7 @@
     homeDirectory = "/home/${username}";
 
     packages = with pkgs; [
+      wev
       nautilus
       kdePackages.filelight
 

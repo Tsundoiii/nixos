@@ -29,6 +29,8 @@
 
   security = {
     rtkit.enable = true;
+    soteria.enable = true;
+    polkit.enablePkexecWrapper = true;
     sudo.extraConfig = "Defaults pwfeedback";
   };
 }

@@ -6,7 +6,6 @@
 
     profiles.default = {
       userSettings = {
-        "workbench.secondarySideBar.defaultVisibility" = "hidden";
         "terminal.integrated.initialHint" = false;
         "files.autoSave" = "onFocusChange";
         "explorer.confirmDragAndDrop" = false;
@@ -23,20 +22,21 @@
         "editor.bracketPairColorization.independentColorPoolPerBracketType" = true;
         "editor.fontLigatures" = "'calt' 0, 'ss04'";
 
-        "python.analysis.typeCheckingMode" = "strict";
+        "workbench.secondarySideBar.defaultVisibility" = "hidden";
+        "workbench.editorAssociations" = {
+          "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc" =
+            "default";
+          "*.qrc" = "qt-core.qrcEditor";
+        };
 
-        "qt-qml.qmlls.customExePath" = "${pkgs.kdePackages.qtdeclarative}/bin/qmlls";
+        "qt-core.showWelcomePageOnActivation" = false;
+
+        "qt-qml.qmlls.customExePath" = lib.getExe' pkgs.kdePackages.qtdeclarative "qmlls";
         "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
         "qt-qml.qmlls.customArgs" = [ "-E" ];
 
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nixd";
-
-        "nix.hiddenLanguageServerErrors" = [
-          "textDocument/definition"
-          "textDocument/formatting"
-        ];
-
         "nix.serverSettings" = {
           "nixd" = {
             "formatting" = {
@@ -44,6 +44,10 @@
             };
           };
         };
+        "nix.hiddenLanguageServerErrors" = [
+          "textDocument/definition"
+          "textDocument/formatting"
+        ];
       };
 
       extensions = with pkgs.vscode-marketplace; [

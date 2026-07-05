@@ -16,8 +16,8 @@
     description = "Tsundoiii";
 
     extraGroups = [
-      "networkmanager"
       "wheel"
+      "networkmanager"
     ];
   };
 }

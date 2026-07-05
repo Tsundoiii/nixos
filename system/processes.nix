@@ -5,8 +5,8 @@
 
   services = {
     fwupd.enable = true;
-    gvfs.enable = true;
     usbmuxd.enable = true;
+    gvfs.enable = true;
     blueman.enable = true;
     automatic-timezoned.enable = true;
     xserver.enable = true;

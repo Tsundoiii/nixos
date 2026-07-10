@@ -4,6 +4,12 @@
   programs.vscode = {
     enable = true;
 
+    argvSettings = {
+      enable-crash-reporter = true;
+      crash-reporter-id = "8fda5cae-0e3d-4fd9-a983-8a584b6c53ea";
+      locale = "zh-tw";
+    };
+
     profiles.default = {
       userSettings = {
         "terminal.integrated.initialHint" = false;
@@ -51,6 +57,8 @@
       };
 
       extensions = with pkgs.vscode-marketplace; [
+        ms-ceintl.vscode-language-pack-zh-hant
+
         ms-vscode-remote.remote-ssh
         ms-vscode.vscode-serial-monitor
 

@@ -69,7 +69,7 @@ PanelWindow {
                 }
             };
 
-            xhr.send();
+            //xhr.send();
         }
 
         function setBackground(response) {

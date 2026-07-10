@@ -32,14 +32,14 @@ Block {
 
             switch (Networking.connectivity) {
             case NetworkConnectivity.None:
-                return "(No Network)";
+                return "(無網絡)";
             case NetworkConnectivity.Unknown:
-                return "(Unknown)";
+                return "(未知)";
             case NetworkConnectivity.Portal:
-                text += " (Portal)";
+                text += " (入口網)";
                 break;
             case NetworkConnectivity.Limited:
-                text += " (Limited)";
+                text += " (有限)";
                 break;
             }
 

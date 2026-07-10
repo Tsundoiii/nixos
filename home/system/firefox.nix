@@ -20,6 +20,9 @@ let
     "devtools.toolbox.host" = "right";
     "extensions.autoDisableScopes" = 0;
 
+    "intl.locale.requested" = "zh-TW,en-US";
+    "intl.accept_languages" = "zh-tw,zh,en-us,en";
+
     "browser.privatebrowsing.autostart" = true;
     "browser.urlbar.suggest.history" = false;
     "browser.translations.automaticallyPopup" = false;
@@ -66,6 +69,7 @@ in
 {
   programs.firefox = {
     enable = true;
+    languagePacks = [ "zh-TW" ];
 
     policies = {
       HttpsOnlyMode = "force_enabled";

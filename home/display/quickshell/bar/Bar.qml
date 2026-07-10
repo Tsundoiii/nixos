@@ -15,11 +15,6 @@ PanelWindow {
         right: true
     }
 
-    SystemClock {
-        id: clock
-        precision: SystemClock.Minutes
-    }
-
     RowLayout {
         anchors.left: parent.left
         anchors.verticalCenter: parent.verticalCenter

@@ -73,8 +73,10 @@
         ms-vscode.cpptools
         ms-vscode.cmake-tools
 
+        myriad-dreamin.tinymist
         theqtcompany.qt-core
         theqtcompany.qt-qml
+        tamasfe.even-better-toml
         mechatroner.rainbow-csv
         myriad-dreamin.tinymist
       ];

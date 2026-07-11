@@ -152,7 +152,8 @@
       "Mod+Caps_Lock".action.switch-preset-column-width = [ ];
       "Mod+Alt+Caps_Lock".action.switch-preset-window-height = [ ];
       "Mod+Ctrl+Caps_Lock".action.center-column = [ ];
-      "Mod+Shift+Caps_Lock".action.maximize-column = [ ];
+      "Mod+Shift+Caps_Lock".action.fullscreen-window = [ ];
+      "Mod+Shift+Ctrl+Caps_Lock".action.maximize-column = [ ];
 
       "Mod+Minus".action.set-column-width = "-10%";
       "Mod+Equal".action.set-column-width = "+10%";

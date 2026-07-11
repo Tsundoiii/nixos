@@ -35,24 +35,31 @@ let
     "browser.newtabpage.activity-stream.showWeather" = false;
     "browser.newtabpage.activity-stream.showSponsored" = false;
     "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
-    "browser.newtabpage.activity-stream.default.sites" = "";
+    "browser.newtabpage.activity-stream.default.sites" = null;
 
     "browser.uiCustomization.state" = {
-      currentVersion = 23;
-      newElementCount = 0;
+      "currentVersion" = 23;
+      "newElementCount" = 0;
 
-      placements.nav-bar = [
-        "back-button"
-        "forward-button"
-        "stop-reload-button"
-        "developer-button"
-        "downloads-button"
-        "urlbar-container"
-        "browserpass_maximbaz_com-browser-action"
-        "ublock0_raymondhill_net-browser-action"
-        "_${normalizedId zhongwen}_-browser-action"
-        "_${normalizedId tenten}_-browser-action"
-      ];
+      "placements" = {
+        "TabsToolbar" = [
+          "tabbrowser-tabs"
+          "new-tab-button"
+        ];
+
+        "nav-bar" = [
+          "back-button"
+          "forward-button"
+          "stop-reload-button"
+          "developer-button"
+          "downloads-button"
+          "urlbar-container"
+          "browserpass_maximbaz_com-browser-action"
+          "ublock0_raymondhill_net-browser-action"
+          "_${normalizedId zhongwen}_-browser-action"
+          "_${normalizedId tenten}_-browser-action"
+        ];
+      };
     };
 
     "signon.rememberSignons" = false;

@@ -38,6 +38,7 @@
         "qt-core.showWelcomePageOnActivation" = false;
 
         "qt-qml.qmlls.customExePath" = lib.getExe' pkgs.kdePackages.qtdeclarative "qmlls";
+        "qt-qml.doNotAskForQmllsDownload" = true;
         "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
         "qt-qml.qmlls.customArgs" = [ "-E" ];
 

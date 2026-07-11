@@ -4,7 +4,6 @@
   environment = {
     systemPackages = with pkgs; [
       usbutils
-      brightnessctl
       libimobiledevice
       ifuse
       xwayland-satellite

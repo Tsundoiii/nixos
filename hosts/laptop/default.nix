@@ -1,7 +1,10 @@
+{ pkgs, ... }:
+
 {
   imports = [ ./hardware-configuration.nix ];
 
   networking.hostName = "laptop";
+  environment.systemPackages = [ pkgs.brightnessctl ];
 
   services = {
     fprintd.enable = true;

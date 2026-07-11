@@ -10,10 +10,8 @@
 
   programs.home-manager.enable = true;
 
-  home = rec {
-    stateVersion = "26.05";
-    username = "tsundoiii";
-    homeDirectory = "/home/${username}";
+  home = {
+    stateVersion = "26.11";
 
     packages = with pkgs; [
       wev

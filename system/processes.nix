@@ -41,6 +41,11 @@
     steam.enable = true;
     gnupg.agent.enable = true;
 
+    nix-ld = {
+      enable = true;
+      libraries = [ pkgs.libusb1 ];
+    };
+
     nh = {
       enable = true;
       clean.enable = true;

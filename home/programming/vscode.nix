@@ -1,5 +1,36 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
+let
+  picoFixed = pkgs.vscode-marketplace.paulober.pico-w-go.overrideAttrs (old: {
+    nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
+      pkgs.autoPatchelfHook
+    ];
+
+    buildInputs = (old.buildInputs or [ ]) ++ [
+      pkgs.stdenv.cc.cc
+    ];
+
+    postFixup = ''
+      echo "Fixing pico-w-go native modules..."
+
+      # 1. Remove musl binaries (they will NEVER work on NixOS/glibc)
+      find $out -name '*musl.node' -delete || true
+
+      # 2. Patch ALL remaining .node files recursively
+      find $out -name '*.node' -print0 | while IFS= read -r -d \'\' f; do
+        echo "patching $f"
+
+        patchelf \
+          --set-rpath ${
+            pkgs.lib.makeLibraryPath [
+              pkgs.stdenv.cc.cc
+            ]
+          } \
+          "$f" || true
+      done
+    '';
+  });
+in
 {
   programs.vscode = {
     enable = true;
@@ -55,6 +86,13 @@
           "textDocument/definition"
           "textDocument/formatting"
         ];
+
+        "cmake.cmakePath" = lib.getExe pkgs.cmake;
+
+        "raspberry-pi-pico.cmakePath" = lib.getExe pkgs.cmake;
+        "raspberry-pi-pico.python3Path" = lib.getExe pkgs.python3;
+        "raspberry-pi-pico.ninjaPath" = lib.getExe pkgs.ninja;
+        "raspberry-pi-pico.gitPath" = lib.getExe pkgs.git;
       };
 
       extensions = with pkgs.vscode-marketplace; [
@@ -79,7 +117,14 @@
         theqtcompany.qt-qml
         tamasfe.even-better-toml
         mechatroner.rainbow-csv
-        myriad-dreamin.tinymist
+
+        raspberry-pi.raspberry-pi-pico
+        picoFixed
+        marus25.cortex-debug
+        mcu-debug.debug-tracker-vscode
+        mcu-debug.memory-view
+        mcu-debug.rtos-views
+        mcu-debug.peripheral-viewer
       ];
     };
   };

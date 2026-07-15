@@ -1,10 +1,7 @@
 {
   i18n = {
     defaultLocale = "zh_TW.UTF-8";
-
-    extraLocales = [
-      "en_US.UTF-8/UTF-8"
-    ];
+    extraLocales = [ "en_US.UTF-8/UTF-8" ];
 
     extraLocaleSettings = {
       LC_ADDRESS = "en_US.UTF-8";

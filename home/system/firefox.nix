@@ -66,6 +66,8 @@ let
     "signon.autofillForms" = false;
     "signon.generation.enabled" = false;
     "signon.firefoxRelay.feature" = false;
+
+    "media.eme.enabled" = true;
   };
 
   search = {

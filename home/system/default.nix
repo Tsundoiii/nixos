@@ -3,6 +3,7 @@
     ./firefox.nix
     ./ghostty.nix
     ./hyfetch.nix
+    ./i18n.nix
     ./mako.nix
     ./password-store-browserpass.nix
     ./starship.nix

@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   i18n = {
     defaultLocale = "zh_TW.UTF-8";
@@ -15,16 +13,6 @@
       LC_PAPER = "en_US.UTF-8";
       LC_TELEPHONE = "en_US.UTF-8";
       LC_COLLATE = "en_US.UTF-8";
-    };
-
-    inputMethod = {
-      enable = true;
-      type = "ibus";
-
-      ibus.engines = with pkgs.ibus-engines; [
-        rime
-        mozc-ut
-      ];
     };
   };
 }

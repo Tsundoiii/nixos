@@ -31,7 +31,6 @@
     rtkit.enable = true;
     soteria.enable = true;
     sudo.extraConfig = "Defaults pwfeedback";
-    pam.services.login.enableGnomeKeyring = true;
     polkit.enablePkexecWrapper = true;
   };
 }

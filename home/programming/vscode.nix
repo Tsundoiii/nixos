@@ -38,6 +38,7 @@ in
     argvSettings = {
       enable-crash-reporter = true;
       crash-reporter-id = "8fda5cae-0e3d-4fd9-a983-8a584b6c53ea";
+      password-store = "gnome-libsecret";
       locale = "zh-tw";
     };
 

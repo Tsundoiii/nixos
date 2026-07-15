@@ -6,9 +6,7 @@
     screenshot-path = "~/Pictures/Screenshots/Screenshot %Y-%m-%d %H-%M-%S.png";
     hotkey-overlay.skip-at-startup = true;
 
-    spawn-at-startup = [
-      { argv = [ "firefox" ]; }
-    ];
+    spawn-at-startup = [ { argv = [ "firefox" ]; } ];
 
     input = {
       warp-mouse-to-focus.enable = true;

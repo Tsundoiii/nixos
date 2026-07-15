@@ -39,6 +39,7 @@
   programs = {
     niri.enable = true;
     steam.enable = true;
+    localsend.enable = true;
     gnupg.agent.enable = true;
 
     nix-ld = {

@@ -277,6 +277,11 @@ in
                   name = "Venla";
                   url = "https://venla.info";
                 }
+
+                {
+                  name = "Phonaesthesia";
+                  url = "https://phonaesthesia.com";
+                }
               ];
             }
 

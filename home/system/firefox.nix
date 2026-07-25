@@ -20,9 +20,6 @@ let
     "devtools.toolbox.host" = "right";
     "extensions.autoDisableScopes" = 0;
 
-    "intl.locale.requested" = "zh-TW,en-US";
-    "intl.accept_languages" = "zh-tw,zh,en-us,en";
-
     "browser.privatebrowsing.autostart" = true;
     "browser.urlbar.suggest.history" = false;
     "browser.translations.automaticallyPopup" = false;
@@ -103,6 +100,9 @@ in
         inherit search;
 
         settings = settings // {
+          "intl.locale.requested" = "zh-TW,en-US";
+          "intl.accept_languages" = "zh-tw,zh,en-us,en";
+
           "browser.newtabpage.pinned" = [
             {
               title = "YouTube";

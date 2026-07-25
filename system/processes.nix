@@ -7,14 +7,8 @@
     fwupd.enable = true;
     usbmuxd.enable = true;
     gvfs.enable = true;
-    blueman.enable = true;
     automatic-timezoned.enable = true;
     xserver.enable = true;
-
-    btrfs.autoScrub = {
-      enable = true;
-      fileSystems = [ "/" ];
-    };
 
     pipewire = {
       enable = true;
@@ -33,6 +27,11 @@
         cups-filters
         cups-browsed
       ];
+    };
+
+    btrfs.autoScrub = {
+      enable = true;
+      fileSystems = [ "/" ];
     };
   };
 

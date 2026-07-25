@@ -9,6 +9,7 @@
   services = {
     fprintd.enable = true;
     upower.enable = true;
+    blueman.enable = true;
 
     keyd = {
       enable = true;
@@ -19,8 +20,6 @@
         settings.main.leftcontrol = "noop";
       };
     };
-
-    resolved.enable = true;
   };
 
   home-manager.users.tsundoiii.programs.niri.settings = {

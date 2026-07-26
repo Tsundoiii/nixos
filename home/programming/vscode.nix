@@ -76,6 +76,10 @@ in
 
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nixd";
+        "nix.hiddenLanguageServerErrors" = [
+          "textDocument/definition"
+          "textDocument/formatting"
+        ];
         "nix.serverSettings" = {
           "nixd" = {
             "formatting" = {
@@ -83,10 +87,6 @@ in
             };
           };
         };
-        "nix.hiddenLanguageServerErrors" = [
-          "textDocument/definition"
-          "textDocument/formatting"
-        ];
 
         "cmake.cmakePath" = lib.getExe pkgs.cmake;
 
@@ -94,8 +94,6 @@ in
         "raspberry-pi-pico.python3Path" = lib.getExe pkgs.python3;
         "raspberry-pi-pico.ninjaPath" = lib.getExe pkgs.ninja;
         "raspberry-pi-pico.gitPath" = lib.getExe pkgs.git;
-
-        "stm32cube-ide-core.configuration.productSTM32CubeMX.executablePath" = lib.getExe pkgs.stm32cubemx;
       };
 
       extensions = with pkgs.vscode-marketplace; [
@@ -128,11 +126,6 @@ in
         mcu-debug.memory-view
         mcu-debug.rtos-views
         mcu-debug.peripheral-viewer
-
-        stmicroelectronics.stm32-vscode-extension
-        stmicroelectronics.stm32cube-ide-core
-        stmicroelectronics.stm32cube-ide-bundles-manager
-        stmicroelectronics.stm32cube-ide-build-cmake
       ];
     };
   };

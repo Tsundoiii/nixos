@@ -5,7 +5,6 @@
 
   services = {
     fwupd.enable = true;
-    usbmuxd.enable = true;
     gvfs.enable = true;
     automatic-timezoned.enable = true;
     xserver.enable = true;
@@ -37,8 +36,8 @@
 
   programs = {
     niri.enable = true;
-    steam.enable = true;
     localsend.enable = true;
+    steam.enable = true;
     gnupg.agent.enable = true;
 
     nix-ld = {

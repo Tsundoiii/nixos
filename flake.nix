@@ -27,8 +27,8 @@
       nixpkgs,
       nixos-hardware,
       home-manager,
-      stylix,
       niri,
+      stylix,
       nix-vscode-extensions,
       ...
     }:

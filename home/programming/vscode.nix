@@ -114,10 +114,11 @@ in
         ms-vscode.cmake-tools
 
         myriad-dreamin.tinymist
+        james-yu.latex-workshop
+        mechatroner.rainbow-csv
         theqtcompany.qt-core
         theqtcompany.qt-qml
         tamasfe.even-better-toml
-        mechatroner.rainbow-csv
 
         raspberry-pi.raspberry-pi-pico
         picoFixed

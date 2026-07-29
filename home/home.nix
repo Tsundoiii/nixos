@@ -28,6 +28,8 @@
 
       typst
 
+      gimp
+
       blahaj
     ];
   };

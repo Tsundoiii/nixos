@@ -3,8 +3,12 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs";
-    nixos-hardware.url = "github:NixOS/nixos-hardware";
     niri.url = "github:sodiboo/niri-flake";
+
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";

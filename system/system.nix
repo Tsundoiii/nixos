@@ -1,16 +1,12 @@
 { pkgs, ... }:
 
 {
-  system = {
-    stateVersion = "26.11";
-
-    autoUpgrade = {
-      enable = true;
-      dates = "weekly";
-      persistent = true;
-      runGarbageCollection = true;
-      flags = [ "--recreate-lock-file" ];
-    };
+  system.autoUpgrade = {
+    enable = true;
+    dates = "weekly";
+    persistent = true;
+    runGarbageCollection = true;
+    flags = [ "--recreate-lock-file" ];
   };
 
   boot = {

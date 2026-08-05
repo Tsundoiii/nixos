@@ -32,6 +32,11 @@
       enable = true;
       fileSystems = [ "/" ];
     };
+
+    udev.packages = with pkgs; [
+      platformio-core.udev
+      openocd
+    ];
   };
 
   programs = {

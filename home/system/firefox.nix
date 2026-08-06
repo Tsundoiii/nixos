@@ -160,6 +160,16 @@ in
 
                   bookmarks = [
                     {
+                      name = "GitHub";
+                      url = "https://github.com";
+                    }
+
+                    {
+                      name = "Oh Shit, Git!?!";
+                      url = "https://ohshitgit.com";
+                    }
+
+                    {
                       name = "Languages";
 
                       bookmarks = [
@@ -214,18 +224,29 @@ in
                 }
 
                 {
-                  name = "GitHub";
-                  url = "https://github.com";
-                }
+                  name = "Privacy";
 
-                {
-                  name = "Oh Shit, Git!?!";
-                  url = "https://ohshitgit.com";
+                  bookmarks = [
+                    {
+                      name = "Privacy Guides";
+                      url = "https://www.privacyguides.org/en";
+                    }
+
+                    {
+                      name = "Atlas of Surveillance";
+                      url = "https://www.atlasofsurveillance.org";
+                    }
+                  ];
                 }
 
                 {
                   name = "cat -v Harmful";
                   url = "https://harmful.cat-v.org";
+                }
+
+                {
+                  name = "Dynamicland";
+                  url = "https://dynamicland.org";
                 }
               ];
             }

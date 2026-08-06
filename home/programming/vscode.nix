@@ -56,6 +56,9 @@
             };
           };
         };
+
+        "platformio-ide.useBuiltinPython" = false;
+        "platformio-ide.customPATH" = "${pkgs.python3}/bin";
       };
 
       extensions = with pkgs.vscode-marketplace; [
@@ -73,7 +76,6 @@
         rust-lang.rust-analyzer
         ms-vscode.cpptools-extension-pack
         ms-vscode.cpptools
-        ms-vscode.cmake-tools
 
         myriad-dreamin.tinymist
         james-yu.latex-workshop

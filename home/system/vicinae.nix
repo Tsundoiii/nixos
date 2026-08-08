@@ -6,7 +6,7 @@
     settings.favorites = [
       "power:power-off"
       "power:reboot"
-      "power:hibernate"
+      "power:sleep"
       "system:run"
     ];
   };

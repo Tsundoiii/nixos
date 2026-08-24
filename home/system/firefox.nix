@@ -529,6 +529,26 @@ in
             }
 
             {
+              title = "Outlook";
+              url = "https://outlook.cloud.microsoft";
+            }
+
+            {
+              title = "OneDrive";
+              url = "https://purdue0-my.sharepoint.com/";
+            }
+
+            {
+              title = "Word";
+              url = "https://word.cloud.microsoft";
+            }
+
+            {
+              title = "Teams";
+              url = "https://teams.cloud.microsoft";
+            }
+
+            {
               title = "Brightspace";
               url = "https://purdue.brightspace.com";
             }
@@ -539,23 +559,8 @@ in
             }
 
             {
-              title = "MyLab & Mastering";
-              url = "https://mylab.pearson.com";
-            }
-
-            {
-              title = "Outlook";
-              url = "https://outlook.office365.com";
-            }
-
-            {
-              title = "OneDrive";
-              url = "https://purdue0-my.sharepoint.com/";
-            }
-
-            {
-              title = "Word";
-              url = "https://word.microsoft.cloud";
+              title = "Piazza";
+              url = "https://piazza.com";
             }
 
             {

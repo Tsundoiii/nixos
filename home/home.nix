@@ -28,8 +28,10 @@
 
       typst
 
+      ffmpeg-headless
       gimp
 
+      ratty
       blahaj
     ];
   };

@@ -13,6 +13,7 @@
     settings = {
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
+      pull.rebase = true;
       submodule.recurse = true;
 
       user = {

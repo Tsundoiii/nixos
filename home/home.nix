@@ -33,6 +33,8 @@
 
       ratty
       blahaj
+
+      slack
     ];
   };
 }

@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs";
-    niri.url = "github:sodiboo/niri-flake";
+    niri.url = "github:epireyn/niri-flake";
 
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";

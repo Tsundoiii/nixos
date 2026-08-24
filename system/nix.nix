@@ -3,8 +3,8 @@
 {
   nix.settings = {
     warn-dirty = false;
-    trusted-substituters = [ "https://niri.cachix.org" ];
-    trusted-public-keys = [ "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964=" ];
+    trusted-substituters = [ "https://niri-epireyn.cachix.org" ];
+    trusted-public-keys = [ "niri-epireyn.cachix.org-1:tlVyFN7CtsDT+ZcLPS+ekFWeT1X6X4OqvWqbBMyIzFA=" ];
 
     experimental-features = [
       "nix-command"

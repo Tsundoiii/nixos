@@ -1,10 +1,7 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    usbutils
-    xwayland-satellite
-  ];
+  environment.systemPackages = with pkgs; [ usbutils ];
 
   users.users.tsundoiii = {
     isNormalUser = true;

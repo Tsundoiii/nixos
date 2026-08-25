@@ -76,6 +76,7 @@
         rust-lang.rust-analyzer
         ms-vscode.cpptools-extension-pack
         ms-vscode.cpptools
+        ms-vscode.makefile-tools
 
         myriad-dreamin.tinymist
         james-yu.latex-workshop

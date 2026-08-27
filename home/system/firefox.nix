@@ -569,6 +569,11 @@ in
             }
 
             {
+              title = "Housing Portal";
+              url = "https://housing.purdue.edu/portal";
+            }
+
+            {
               title = "Fix It Portal";
               url = "https://www.purdue.edu/fix-it";
             }
@@ -576,6 +581,16 @@ in
             {
               title = "BoilerTV";
               url = "https://housing.purdue.edu/BTV";
+            }
+
+            {
+              title = "OnePurdue";
+              url = "https://one.purdue.edu";
+            }
+
+            {
+              title = "SuccessFactors";
+              url = "https://hcm-us10.hr.cloud.sap/sf/home?bplte_company=purdueuniv";
             }
           ];
         };

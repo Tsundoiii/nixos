@@ -24,6 +24,7 @@
       nixfmt
 
       kicad
+      ltspice
       pineflash
 
       typst

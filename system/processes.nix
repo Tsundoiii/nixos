@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
 {
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    plugins = [ pkgs.networkmanager-openconnect ];
+  };
 
   services = {
     fwupd.enable = true;

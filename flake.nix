@@ -29,9 +29,9 @@
   outputs =
     {
       nixpkgs,
+      niri,
       nixos-hardware,
       home-manager,
-      niri,
       stylix,
       nix-vscode-extensions,
       ...
@@ -44,6 +44,7 @@
 
       modules = [
         ./system
+
         niri.nixosModules.niri
         stylix.nixosModules.stylix
 

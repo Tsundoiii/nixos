@@ -6,6 +6,7 @@
     ./i18n.nix
     ./mako.nix
     ./password-store-browserpass.nix
+    ./ssh.nix
     ./starship.nix
     ./vicinae.nix
   ];

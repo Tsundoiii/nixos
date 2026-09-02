@@ -6,6 +6,11 @@
   networking.hostName = "laptop";
   environment.systemPackages = [ pkgs.brightnessctl ];
 
+  boot.blacklistedKernelModules = [
+    "pcspkr"
+    "snd_pcsp"
+  ];
+
   services = {
     fprintd.enable = true;
     upower.enable = true;

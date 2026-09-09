@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs";
     niri.url = "github:epireyn/niri-flake";
+    waveforms.url = "github:DragonHuntrX/waveforms-flake-local";
 
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
@@ -30,6 +31,7 @@
     {
       nixpkgs,
       niri,
+      waveforms,
       nixos-hardware,
       home-manager,
       stylix,
@@ -46,6 +48,7 @@
         ./system
 
         niri.nixosModules.niri
+        waveforms.nixosModule
         stylix.nixosModules.stylix
 
         home-manager.nixosModules.home-manager

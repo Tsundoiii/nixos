@@ -78,11 +78,11 @@
         ms-vscode.cpptools
 
         myriad-dreamin.tinymist
-        james-yu.latex-workshop
         mechatroner.rainbow-csv
         theqtcompany.qt-core
         theqtcompany.qt-qml
         tamasfe.even-better-toml
+        tomoki1207.pdf
 
         platformio.platformio-ide
       ];

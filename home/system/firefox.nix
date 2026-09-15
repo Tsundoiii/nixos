@@ -544,11 +544,6 @@ in
             }
 
             {
-              title = "Teams";
-              url = "https://teams.cloud.microsoft";
-            }
-
-            {
               title = "Brightspace";
               url = "https://purdue.brightspace.com";
             }
@@ -591,6 +586,16 @@ in
             {
               title = "SuccessFactors";
               url = "https://hcm-us10.hr.cloud.sap/sf/home?bplte_company=purdueuniv";
+            }
+
+            {
+              title = "Symplicity";
+              url = "https://purduecareergateway-csm.symplicity.com";
+            }
+
+            {
+              title = "Wikipedia";
+              url = "https://en.wikipedia.org";
             }
           ];
         };

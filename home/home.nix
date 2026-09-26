@@ -25,6 +25,7 @@
 
       kicad
       ltspice
+      gtkwave
       pineflash
 
       typst

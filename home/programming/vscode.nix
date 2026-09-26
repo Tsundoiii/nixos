@@ -36,6 +36,8 @@
           "*.qrc" = "qt-core.qrcEditor";
         };
 
+        "python.defaultInterpreterPath" = lib.getExe pkgs.python3;
+
         "qt-core.showWelcomePageOnActivation" = false;
 
         "qt-qml.qmlls.customExePath" = lib.getExe' pkgs.kdePackages.qtdeclarative "qmlls";

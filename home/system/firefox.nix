@@ -442,6 +442,10 @@ in
 
               bookmarks = [
                 {
+                  name = "CORES";
+                  url = "https://apps.fcc.gov/cores";
+                }
+                {
                   name = "Radio-Locator";
                   url = "https://radio-locator.com";
                 }

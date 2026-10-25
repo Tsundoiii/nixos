@@ -445,6 +445,12 @@ in
                   name = "CORES";
                   url = "https://apps.fcc.gov/cores";
                 }
+
+                {
+                  name = "FCC License Manager";
+                  url = "https://wireless2.fcc.gov/UlsEntry/licManager/login.jsp";
+                }
+
                 {
                   name = "Radio-Locator";
                   url = "https://radio-locator.com";

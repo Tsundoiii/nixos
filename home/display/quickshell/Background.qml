@@ -28,6 +28,7 @@ PanelWindow {
             anchors.right: parent.right
             padding: 15
             color: theme.fg
+            linkColor: theme.fg
             wrapMode: Text.WordWrap
 
             font: {
@@ -39,10 +40,11 @@ PanelWindow {
 
         function getAPOD(callback) {
             const xhr = new XMLHttpRequest();
-            let url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
+            let url = "https://science.nasa.gov/wp-json/wp/v2/apod-basic/";
+
+            const now = new Date();
 
             if (background.monitor.name === "VGA-1") {
-                const now = new Date();
                 const currentYear = now.getFullYear();
                 const startYear = now.getMonth() >= 5 ? 1995 : 1996;
                 let year = Math.random() * (currentYear - startYear);
@@ -53,8 +55,9 @@ PanelWindow {
 
                 year += startYear;
                 now.setFullYear(year);
-                url += `&date=${Qt.formatDate(now, "yyyy-MM-dd")}`;
             }
+
+            url += Qt.formatDate(now, "yyMMdd");
 
             xhr.open("GET", url);
 

@@ -26,6 +26,7 @@
         "editor.formatOnSave" = true;
         "editor.formatOnPaste" = true;
         "editor.formatOnType" = true;
+        "editor.wordWrap" = "on";
         "editor.bracketPairColorization.independentColorPoolPerBracketType" = true;
         "editor.fontLigatures" = "'calt' 0, 'ss04'";
 

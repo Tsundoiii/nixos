@@ -4,11 +4,9 @@
   inputs = {
     nixpkgs.url = "nixpkgs";
     niri.url = "github:epireyn/niri-flake";
-    waveforms.url = "github:DragonHuntrX/waveforms-flake-local";
 
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     home-manager = {
@@ -23,6 +21,11 @@
 
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    waveforms = {
+      url = "github:DragonHuntrX/waveforms-flake-local";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

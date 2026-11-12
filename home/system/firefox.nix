@@ -110,6 +110,11 @@ in
             }
 
             {
+              title = "YouTube Music";
+              url = "https://music.youtube.com";
+            }
+
+            {
               title = "Spotify";
               url = "https://open.spotify.com";
             }

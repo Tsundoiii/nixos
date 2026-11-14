@@ -61,7 +61,8 @@
         };
 
         "platformio-ide.useBuiltinPython" = false;
-        "platformio-ide.customPATH" = "${pkgs.python3}/bin";
+        "platformio-ide.customPATH" = "${pkgs.python3}/bin:${pkgs.platformio-core}/bin";
+        "platformio-ide.disablePIOHomeStartup" = true;
       };
 
       extensions = with pkgs.vscode-marketplace; [

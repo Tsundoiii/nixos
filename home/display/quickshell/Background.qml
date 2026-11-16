@@ -78,7 +78,7 @@ PanelWindow {
         function setBackground(response) {
             background.visible = true;
             picture.source = response.hdurl;
-            explanation.text = `${response.date.slice(0, 4) != new Date().getFullYear() ? response.date + "\n": ""}${response.explanation}`;
+            explanation.text = `${response.date.slice(0, 4) != new Date().getFullYear() ? response.date + "\n" : ""}${response.explanation}`;
         }
 
         Component.onCompleted: getAPOD(setBackground)

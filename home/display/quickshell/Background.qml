@@ -42,22 +42,22 @@ PanelWindow {
             const xhr = new XMLHttpRequest();
             let url = "https://science.nasa.gov/wp-json/wp/v2/apod-basic/";
 
-            const now = new Date();
+            const date = new Date();
 
             if (background.monitor.name === "VGA-1") {
-                const currentYear = now.getFullYear();
-                const startYear = now.getMonth() >= 5 ? 1995 : 1996;
+                const currentYear = date.getFullYear();
+                const startYear = date.getMonth() >= 5 ? 1995 : 1996;
                 let year = Math.random() * (currentYear - startYear);
 
-                if (now.getMonth() === 1 && now.getDate() === 29) {
+                if (date.getMonth() === 1 && date.getDate() === 29) {
                     year = Math.round(year / 4) * 4;
                 }
 
                 year += startYear;
-                now.setFullYear(year);
+                date.setFullYear(year);
             }
 
-            url += Qt.formatDate(now, "yyMMdd");
+            url += Qt.formatDate(date, "yyMMdd");
 
             xhr.open("GET", url);
 
@@ -76,18 +76,9 @@ PanelWindow {
         }
 
         function setBackground(response) {
-            if (response.hasOwnProperty("hdurl")) {
-                picture.source = response.hdurl;
-            } else {
-                picture.source = response.url;
-            }
-
             background.visible = true;
-            explanation.text = response.explanation;
-
-            if (response.date.slice(0, 4) != new Date().getFullYear()) {
-                explanation.text = response.date + `\n${explanation.text}`;
-            }
+            picture.source = response.hdurl;
+            explanation.text = `${response.date.slice(0, 4) != new Date().getFullYear() ? response.date + "\n": ""}${response.explanation}`;
         }
 
         Component.onCompleted: getAPOD(setBackground)

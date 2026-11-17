@@ -12,8 +12,6 @@
     };
 
     profiles.default = {
-      mutableUserSettings = true;
-
       userSettings = {
         "terminal.integrated.initialHint" = false;
         "files.autoSave" = "onFocusChange";
@@ -32,7 +30,11 @@
         "editor.bracketPairColorization.independentColorPoolPerBracketType" = true;
 
         "workbench.secondarySideBar.defaultVisibility" = "hidden";
-
+        "workbench.editorAssociations" = {
+          "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc" =
+            "default";
+          "*.qrc" = "qt-core.qrcEditor";
+        };
         "python.defaultInterpreterPath" = lib.getExe pkgs.python3;
 
         "qt-core.showWelcomePageOnActivation" = false;

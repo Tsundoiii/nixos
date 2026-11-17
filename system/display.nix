@@ -7,6 +7,7 @@
     packages = with pkgs; [
       noto-fonts
       noto-fonts-cjk-sans
+      nerd-fonts.symbols-only
     ];
   };
 
@@ -16,8 +17,8 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
 
     fonts.monospace = {
-      package = pkgs.ioskeley-mono.nl-nf;
-      name = "IoskeleyMonoNL Nerd Font Mono";
+      package = pkgs.ioskeley-mono.nl;
+      name = "Ioskeley Mono NL";
     };
   };
 }

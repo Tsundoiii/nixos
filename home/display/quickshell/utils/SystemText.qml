@@ -7,7 +7,7 @@ Text {
     fontSizeMode: Text.Fit
     
     font: {
-        "family": "IoskeleyMonoNL Nerd Font Mono",
+        "family": "Ioskeley Mono NL",
         "bold": true
     }
 }

@@ -32,7 +32,7 @@ PanelWindow {
             wrapMode: Text.WordWrap
 
             font: {
-                "family": "FiraCode Nerd Font",
+                "family": "IoskeleyMonoNL Nerd Font Mono ExtraBold",
                 "bold": true,
                 "pixelSize": 12
             }

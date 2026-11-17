@@ -16,8 +16,8 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
 
     fonts.monospace = {
-      package = pkgs.nerd-fonts.fira-code;
-      name = "FiraCode Nerd Font";
+      package = pkgs.ioskeley-mono.nl-nf;
+      name = "IoskeleyMonoNL Nerd Font Mono";
     };
   };
 }

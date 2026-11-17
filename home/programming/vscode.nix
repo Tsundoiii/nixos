@@ -28,7 +28,6 @@
         "editor.formatOnType" = true;
         "editor.wordWrap" = "on";
         "editor.bracketPairColorization.independentColorPoolPerBracketType" = true;
-        "editor.fontLigatures" = "'calt' 0, 'ss04'";
 
         "workbench.secondarySideBar.defaultVisibility" = "hidden";
         "workbench.editorAssociations" = {

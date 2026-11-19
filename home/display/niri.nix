@@ -31,7 +31,7 @@
           "wpctl"
           "set-volume"
           "@DEFAULT_AUDIO_SINK@"
-          "0.05+"
+          "0.02+"
           "-l"
           "1.0"
         ];
@@ -44,7 +44,7 @@
           "wpctl"
           "set-volume"
           "@DEFAULT_AUDIO_SINK@"
-          "0.05-"
+          "0.02-"
         ];
       };
 
